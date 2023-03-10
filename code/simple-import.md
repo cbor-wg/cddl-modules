@@ -1,0 +1,26 @@
+The way an `import` works is shown by this simple example:
+
+~~~
+$ cddlc -2tcddl -
+start = COSE_Key
+;# import rfc9052
+
+~~~
+
+
+This results in the following CDDL 1.0 specification:
+
+~~~ cddl
+start = COSE_Key
+COSE_Key = {
+  1 => tstr / int,
+  ? 2 => bstr,
+  ? 3 => tstr / int,
+  ? 4 => [+ tstr / int],
+  ? 5 => bstr,
+  * label => values,
+}
+label = int / tstr
+values = any
+
+~~~

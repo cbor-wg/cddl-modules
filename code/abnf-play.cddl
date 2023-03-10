@@ -1,0 +1,14 @@
+start = text .abnf ("directive" .cat abnf)
+abnf = '
+directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
+                    filename [as-clause] CRLF
+from-clause = 1*(id [","] RS) %s"from" RS
+as-clause = RS %s"as" RS id
+filename = 1*("-" / "." / %x30-39 / %x41-5a / "_" / %x61-7a)
+id = ("$" / %x40-5a / "_" / %x61-7a)
+     *("$" / %x30-39 / %x40-5a / "_" / %x61-7a)
+RS = 1*WS
+WS = SP
+SP = %x20
+CRLF = %x0A / %x0D.0A
+'
