@@ -10,15 +10,15 @@ stream: IETF
 # date:
 cat: std
 consensus: true
-area: ART
-workgroup: CBOR
+area: "Applications and Real-Time"
+workgroup: "Concise Binary Object Representation Maintenance and Extensions"
 keyword:
  - Concise Data Definition Language
 venue:
-  group: CBOR
-  mail: cbor@ietf.org
+  group: "Concise Binary Object Representation Maintenance and Extensions"
+  mail: "cbor@ietf.org"
   github: "cbor-wg/cddl-modules"
-  latest: https://cbor-wg.github.io/cddl-modules/
+  latest: "https://cbor-wg.github.io/cddl-modules/draft-bormann-cbor-cddl-modules.html"
 
 author:
   -
