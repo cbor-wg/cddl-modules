@@ -75,7 +75,7 @@ informative:
     of draft-bormann-cbor-cddl-2-draft and previously
     draft-bormann-cbor-cddl-freezer.
     This submission extracts out the functionality that is ready
-    for WG adoption and further WG work.
+    for further WG work.
 
 --- middle
 
