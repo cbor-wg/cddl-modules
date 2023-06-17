@@ -4,7 +4,7 @@ v: 3
 title: "CDDL Module Structure"
 abbrev: "CDDL Module Structure"
 
-docname: draft-bormann-cbor-cddl-modules-latest
+docname: draft-ietf-cbor-cddl-modules-latest
 stream: IETF
 # updates: 8610
 # date:
@@ -18,7 +18,7 @@ venue:
   group: "Concise Binary Object Representation Maintenance and Extensions"
   mail: "cbor@ietf.org"
   github: "cbor-wg/cddl-modules"
-  latest: "https://cbor-wg.github.io/cddl-modules/draft-bormann-cbor-cddl-modules.html"
+  latest: "https://cbor-wg.github.io/cddl-modules/draft-ietf-cbor-cddl-modules.html"
 
 author:
   -
