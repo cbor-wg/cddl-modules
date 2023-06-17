@@ -1,11 +1,11 @@
 # CDDL Module Structure
 
-This is the working area for the individual Internet-Draft, "CDDL Module Structure".
+This is the working area for the IETF [CBOR Working Group](https://datatracker.ietf.org/wg/cbor/documents/) Internet-Draft, "CDDL Module Structure".
 
-* [Editor's Copy](https://cbor-wg.github.io/cddl-modules/#go.draft-bormann-cbor-cddl-modules.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-bormann-cbor-cddl-modules)
-* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-modules)
-* [Compare Editor's Copy to Individual Draft](https://cbor-wg.github.io/cddl-modules/#go.draft-bormann-cbor-cddl-modules.diff)
+* [Editor's Copy](https://cbor-wg.github.io/cddl-modules/#go.draft-ietf-cbor-cddl-modules.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-cbor-cddl-modules)
+* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-modules)
+* [Compare Editor's Copy to Working Group Draft](https://cbor-wg.github.io/cddl-modules/#go.draft-ietf-cbor-cddl-modules.diff)
 
 
 ## Contributing
