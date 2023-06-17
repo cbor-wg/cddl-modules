@@ -35,6 +35,8 @@ author:
 normative:
   RFC8610: cddl
   RFC9165: control1
+  RFC5234: abnf
+  RFC7405: abnf-case
 
 informative:
   I-D.draft-bormann-cbor-cddl-freezer: freezer
