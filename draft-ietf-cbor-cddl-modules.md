@@ -354,7 +354,7 @@ Install on a system with a modern Ruby (Ruby version ≥ 3.0) via:
 
     gem install cddlc
 
-The present document assumes the use of `cddlc` version 0.1.6.
+The present document assumes the use of `cddlc` version 0.1.8.
 
 
 # Acknowledgments
