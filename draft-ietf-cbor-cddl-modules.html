@@ -1334,7 +1334,7 @@ directives in it.<a href="#section-2.3-1" class="pilcrow">¶</a></p>
 <p id="section-2.3-2">The semantics of the module are independent of the module(s) using it,
 however, importing a module may involve transforming its rule names
 into a new namespace (<a href="#namespacing" class="auto internal xref">Section 2.2</a>).<a href="#section-2.3-2" class="pilcrow">¶</a></p>
-<p id="section-2.3-3">Directives look like comments in CDDL 1, so they do not interfere
+<p id="section-2.3-3">Directives look like comments in basic CDDL, so they do not interfere
 with forward compatibility.<a href="#section-2.3-3" class="pilcrow">¶</a></p>
 <p id="section-2.3-4">In the CDDL module structure, lines starting with the prefix <code>;#</code> are
 parsed as directives.<a href="#section-2.3-4" class="pilcrow">¶</a></p>
@@ -1670,10 +1670,6 @@ into a build environment.<a href="#section-3-2" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC5234">[RFC5234]</dt>
-        <dd>
-<span class="refAuthor">Crocker, D., Ed.</span> and <span class="refAuthor">P. Overell</span>, <span class="refTitle">"Augmented BNF for Syntax Specifications: ABNF"</span>, <span class="seriesInfo">STD 68</span>, <span class="seriesInfo">RFC 5234</span>, <span class="seriesInfo">DOI 10.17487/RFC5234</span>, <time datetime="2008-01" class="refDate">January 2008</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc5234">https://www.rfc-editor.org/rfc/rfc5234</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC7405">[RFC7405]</dt>
         <dd>
 <span class="refAuthor">Kyzivat, P.</span>, <span class="refTitle">"Case-Sensitive String Support in ABNF"</span>, <span class="seriesInfo">RFC 7405</span>, <span class="seriesInfo">DOI 10.17487/RFC7405</span>, <time datetime="2014-12" class="refDate">December 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7405">https://www.rfc-editor.org/rfc/rfc7405</a>&gt;</span>. </dd>
@@ -1687,8 +1683,14 @@ into a build environment.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Vigano, C.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures"</span>, <span class="seriesInfo">RFC 8610</span>, <span class="seriesInfo">DOI 10.17487/RFC8610</span>, <time datetime="2019-06" class="refDate">June 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8610">https://www.rfc-editor.org/rfc/rfc8610</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9165">[RFC9165]</dt>
-      <dd>
+        <dd>
 <span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Additional Control Operators for the Concise Data Definition Language (CDDL)"</span>, <span class="seriesInfo">RFC 9165</span>, <span class="seriesInfo">DOI 10.17487/RFC9165</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9165">https://www.rfc-editor.org/rfc/rfc9165</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="STD68">[STD68]</dt>
+      <dd>
+<div class="refInstance" id="RFC5234">
+            <span class="refAuthor">Crocker, D., Ed.</span> and <span class="refAuthor">P. Overell</span>, <span class="refTitle">"Augmented BNF for Syntax Specifications: ABNF"</span>, <span class="seriesInfo">STD 68</span>, <span class="seriesInfo">RFC 5234</span>, <time datetime="2008-01" class="refDate">January 2008</time>. </div>
+</dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1707,10 +1709,6 @@ into a build environment.<a href="#section-3-2" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"CDDL 2.0 -- a draft plan"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-cbor-cddl-2-draft-03</span>, <time datetime="2023-08-27" class="refDate">27 August 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-03">https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-03</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.draft-bormann-cbor-cddl-freezer">[I-D.draft-bormann-cbor-cddl-freezer]</dt>
-        <dd>
-<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"A feature freezer for the Concise Data Definition Language (CDDL)"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-cbor-cddl-freezer-12</span>, <time datetime="2023-09-02" class="refDate">2 September 2023</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-freezer-12">https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-freezer-12</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC8428">[RFC8428]</dt>
         <dd>
 <span class="refAuthor">Jennings, C.</span>, <span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Arkko, J.</span>, <span class="refAuthor">Keranen, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Sensor Measurement Lists (SenML)"</span>, <span class="seriesInfo">RFC 8428</span>, <span class="seriesInfo">DOI 10.17487/RFC8428</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8428">https://www.rfc-editor.org/rfc/rfc8428</a>&gt;</span>. </dd>
@@ -1728,7 +1726,9 @@ into a build environment.<a href="#section-3-2" class="pilcrow">¶</a></p>
       <h2 id="name-abnf-specification">
 <a href="#appendix-A" class="section-number selfRef">Appendix A. </a><a href="#name-abnf-specification" class="section-name selfRef">ABNF Specification</a>
       </h2>
-<p id="appendix-A-1">TO DO<a href="#appendix-A-1" class="pilcrow">¶</a></p>
+<p id="appendix-A-1">This section specifies the grammar employed by the module structure
+directives using the ABNF language defined in <span>[<a href="#STD68" class="cite xref">STD68</a>]</span> and
+<span>[<a href="#RFC7405" class="cite xref">RFC7405</a>]</span>.<a href="#appendix-A-1" class="pilcrow">¶</a></p>
 <div class="lang-abnf sourcecode" id="appendix-A-2">
 <pre>
 directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
