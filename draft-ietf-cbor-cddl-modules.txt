@@ -4,8 +4,8 @@
 
 CBOR Maintenance and Extensions                               C. Bormann
 Internet-Draft                                    Universität Bremen TZI
-Intended status: Standards Track                          2 October 2023
-Expires: 4 April 2024
+Intended status: Standards Track                        19 December 2023
+Expires: 21 June 2024
 
 
                          CDDL Module Structure
@@ -25,12 +25,6 @@ Abstract
    The present document defines a backward- and forward-compatible way
    to add a module structure to CDDL.
 
-
-   // Previous versions of the changes in this document were part of
-   // draft-bormann-cbor-cddl-2-draft and previously draft-bormann-cbor-
-   // cddl-freezer.  This submission extracts out the functionality that
-   // is ready for further WG work.
-
 About This Document
 
    This note is to be removed before publishing as an RFC.
@@ -48,20 +42,21 @@ About This Document
    Source for this draft and an issue tracker can be found at
    https://github.com/cbor-wg/cddl-modules.
 
-
-
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 1]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
 Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
    provisions of BCP 78 and BCP 79.
+
+
+
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 1]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
 
    Internet-Drafts are working documents of the Internet Engineering
    Task Force (IETF).  Note that other groups may also distribute
@@ -73,7 +68,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 April 2024.
+   This Internet-Draft will expire on 21 June 2024.
 
 Copyright Notice
 
@@ -93,12 +88,12 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
      1.1.  Conventions and Definitions . . . . . . . . . . . . . . .   3
-   2.  Module superstructure . . . . . . . . . . . . . . . . . . . .   4
+   2.  Module superstructure . . . . . . . . . . . . . . . . . . . .   3
      2.1.  Compatibility . . . . . . . . . . . . . . . . . . . . . .   4
      2.2.  Namespacing . . . . . . . . . . . . . . . . . . . . . . .   4
-     2.3.  "Directives", the "module"  . . . . . . . . . . . . . . .   5
+     2.3.  "Directives", the "module"  . . . . . . . . . . . . . . .   4
      2.4.  Naming and Finding Modules  . . . . . . . . . . . . . . .   5
-     2.5.  Basic Set of Directives . . . . . . . . . . . . . . . . .   6
+     2.5.  Basic Set of Directives . . . . . . . . . . . . . . . . .   5
      2.6.  Explicit selection of names . . . . . . . . . . . . . . .   7
        include . . . . . . . . . . . . . . . . . . . . . . . . . . .   7
        import  . . . . . . . . . . . . . . . . . . . . . . . . . . .   8
@@ -106,19 +101,19 @@ Table of Contents
    3.  Security Considerations . . . . . . . . . . . . . . . . . . .  10
    4.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  10
    5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  10
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 2]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
      5.2.  Informative References  . . . . . . . . . . . . . . . . .  11
    Appendix A.  ABNF Specification . . . . . . . . . . . . . . . . .  11
-   Appendix B.  A CDDL 2.0 Tool  . . . . . . . . . . . . . . . . . .  12
+   Appendix B.  A CDDL Tool that Implements CDDL Module Structure  .  12
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  12
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 2]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
+
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 1.  Introduction
@@ -135,22 +130,11 @@ Internet-Draft            CDDL Module Structure             October 2023
    The present document defines a backward- and forward-compatible way
    to add a module structure to CDDL.
 
-
-   // Previous versions of the changes in this document were part of
-   // draft-bormann-cbor-cddl-2-draft and previously draft-bormann-cbor-
-   // cddl-freezer.  This submission extracts out the functionality that
-   // is ready for further WG work.
-
-
-   // Proposals for additional functionality that needs more work can be
-   // found in [I-D.bormann-cbor-cddl-2-draft].  Proposals for other
-   // additions to the CDDL specification base are in
-   // [I-D.draft-bormann-cbor-cddl-freezer].
-
    The present document is intended to be the specification base of what
-   has colloquially been called CDDL 2.0, a term hat is now focusing on
-   module structure (other documents make up what is now called CDDL
-   1.1).  Additional documents describe further work on CDDL.
+   has colloquially been called CDDL 2.0, a term that is now focusing on
+   module structure (other documents make up what is now sometimes
+   called CDDL 1.1).  Additional documents describe further work on
+   CDDL.
 
 1.1.  Conventions and Definitions
 
@@ -162,14 +146,6 @@ Internet-Draft            CDDL Module Structure             October 2023
    BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 3]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
 2.  Module superstructure
 
    _Compatibility_:  bidirectional (both backward and forward)
@@ -179,35 +155,45 @@ Internet-Draft            CDDL Module Structure             October 2023
    expressed in CDDL has increased, the need to modularize and re-use
    components is increasing.
 
-   CDDL 1.0 has been designed with a crude form of composition:
-   Concatenating a number of CDDL snippets creates a valid CDDL data
-   model unless there is a name collision (identical redefinition is
-   allowed to facilitate this approach).  With larger models, managing
-   the name space to avoid collisions becomes more pressing.
+   CDDL as documented in [RFC8610] (_basic CDDL_) has been designed with
+   a crude form of composition: Concatenating a number of CDDL snippets
+   creates a valid CDDL data model unless there is a name collision
+   (identical redefinition is allowed to facilitate this approach).
+   With larger models, managing the name space to avoid collisions
+   becomes more pressing.
 
-   The knowledge which CDDL snippets need to be concatenated in order to
-   obtain the desired data model lives entirely outside the CDDL
-   snippets in CDDL 1.0.  In CDDL 2.0, rules are packaged as modules and
-   referenced from other modules, providing methods for control of
-   namespace pollution.
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 3]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
+
+   In CDDL's original composition model, the knowledge which CDDL
+   snippets need to be concatenated in order to obtain the desired data
+   model lives entirely outside the CDDL snippets.  With the module
+   structure defined in the present document, rules are packaged as
+   modules and referenced from other modules, providing methods for
+   control of namespace pollution.
 
    Further work may be expended on unambiguous referencing into evolving
    specifications ("versioning") and selection of alternatives (as was
    emulated with snippets in Section 11 of [RFC8428].  Note that one
    approach for expressing variants is demonstrated in [useful] based on
-   Section 4 of [RFC9165]).  See also Section 4 of
-   [I-D.bormann-cbor-cddl-2-draft].
+   Section 4 of [RFC9165]).  Potential further work is outlined in
+   Sections 4 and A.2 of [I-D.bormann-cbor-cddl-2-draft].
 
 2.1.  Compatibility
 
    To achieve the module structure in a way that is friendly to existing
-   environments that operate with CDDL 1.0 snippets and CDDL 1.0
-   implementations, we add a super-syntax (similar to the way pragmas
-   are often added to a language), by carrying them in what is parsed as
-   comments in CDDL 1.0.
+   environments that operate with CDDL and basic CDDL implementations,
+   we add a super-syntax (similar to the way pragmas are often added to
+   a language), by carrying them in what is parsed as comments in basic
+   CDDL.
 
-   This enables each module source file to be valid CDDL\ 1 (but
-   possibly needing to add some rule definitions imported from other
+   This enables each module source file to be basic CDDL on its own
+   (possibly needing to add some rule definitions imported from other
    source files).
 
 2.2.  Namespacing
@@ -216,15 +202,6 @@ Internet-Draft            CDDL Module Structure             October 2023
    name collisions.  This is exacerbated when the modules evolve, which
    may lead to the introduction of a name into an imported module that
    is also used (likely in a different way) in the importing module.
-
-
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 4]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
 
    To be able to manage names in such a way that collisions can be
    avoided, we introduce means to prepend a prefix to the names of rules
@@ -240,18 +217,27 @@ Internet-Draft            CDDL Module Structure             October 2023
    it, however, importing a module may involve transforming its rule
    names into a new namespace (Section 2.2).
 
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 4]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
+
    Directives look like comments in CDDL 1, so they do not interfere
    with forward compatibility.
 
-   Lines starting with the prefix ;# are parsed as directives in
-   CDDL 2.0.
+   In the CDDL module structure, lines starting with the prefix ;# are
+   parsed as directives.
 
 2.4.  Naming and Finding Modules
 
    We assume that module names are filenames taken from one of several
-   source directories available to the CDDL 2.0 processor via the
-   environment.  This avoids the need to nail down brittle pathnames or
-   (partial?)  URIs into the CDDL files.
+   source directories available to the CDDL module structure processor
+   via the environment.  This avoids the need to nail down brittle
+   pathnames or (partial?)  URIs into the CDDL files.
 
    The exact way how these source directories and possibly a precedence
    between them are established is intentionally not fully defined in
@@ -259,13 +245,13 @@ Internet-Draft            CDDL Module Structure             October 2023
    context of the models just as the way they are intended to be used
    will be.  (A more formal structure may follow later.)
 
-   In the CDDL 2.0 Tool described in Appendix B, the set of sources is
-   determined from an environment variable, CDDL_INCLUDE_PATH, which is
-   modeled after usual command-line search paths.  It is a colon-
-   separated list of pathnames to directories, with one special feature:
-   an empty element points to the tool's own collection.  This
-   collection contains fragments of extracted CDDL from published RFCs,
-   using names such as rfc9052.
+   In the module structure implementation that is part of the CDDL Tool
+   described in Appendix B, the set of sources is determined from an
+   environment variable, CDDL_INCLUDE_PATH, which is modeled after usual
+   command-line search paths.  It is a colon-separated list of pathnames
+   to directories, with one special feature: an empty element points to
+   the tool's own collection.  This collection contains fragments of
+   extracted CDDL from published RFCs, using names such as rfc9052.
 
    (Future versions might augment this with Web extractors and/or ways
    to extract CDDL modules from github and from Internet-Drafts; see
@@ -274,26 +260,27 @@ Internet-Draft            CDDL Module Structure             October 2023
 
    The default CDDL_INCLUDE_PATH is:
 
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 5]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
    .:
 
    That is: files are found in the current directory (.) and, if not
    found there, cddlc’s collection.
 
    In the examples following, a cddlc command line will be shown
-   (starting with an isolated $ sign) with the CDDL 2.0 input; the
-   resulting CDDL 1 will be shown separately.
+   (starting with an isolated $ sign) with the module-structured CDDL
+   input; the resulting basic CDDL will be shown separately.
 
 2.5.  Basic Set of Directives
 
    Two groups of directives are defined at this point:
+
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 5]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
 
    *  include, which includes all the rules from a module (which
       includes the ones imported/included there, transitively), or
@@ -328,16 +315,6 @@ Internet-Draft            CDDL Module Structure             October 2023
    label = int / tstr
    values = any
 
-
-
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 6]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
    This is appropriate for using libraries that are well known to the
    importing specification.  However, if it is not acceptable that the
    library can pollute the namespace of the importing module, the import
@@ -348,6 +325,18 @@ Internet-Draft            CDDL Module Structure             October 2023
    ;# import rfc9052 as cose
 
    This results in the following CDDL 1.0 specification:
+
+
+
+
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 6]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
 
    start = cose.COSE_Key
    cose.COSE_Key = {
@@ -387,13 +376,6 @@ include
    The module from which rules are explicitly imported can be
    namespaced:
 
-
-
-Bormann                   Expires 4 April 2024                  [Page 7]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
    $ cddlc -2tcddl -
    mydata = {* label => values}
    ;# include cose.label, cose.values from rfc9052 as cose
@@ -403,6 +385,14 @@ Internet-Draft            CDDL Module Structure             October 2023
    mydata = {* label => values}
    cose.label = int / tstr
    cose.values = any
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 7]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
 
 import
 
@@ -441,17 +431,24 @@ import
    mydata = {Fritz: cose.empty_or_serialized_map}
    ;# import empty_or_serialized_map from rfc9052 as cose
 
-
-
-
-
-Bormann                   Expires 4 April 2024                  [Page 8]
-
-Internet-Draft            CDDL Module Structure             October 2023
-
-
    Note how an additional rule provides an alias for
    empty_or_serialized_map that does not have the namespace prefix:
+
+
+
+
+
+
+
+
+
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 8]
+
+Internet-Draft            CDDL Module Structure            December 2023
+
 
    mydata = {"Fritz" => cose.empty_or_serialized_map}
    empty_or_serialized_map = cose.empty_or_serialized_map
@@ -501,9 +498,12 @@ Internet-Draft            CDDL Module Structure             October 2023
 
 
 
-Bormann                   Expires 4 April 2024                  [Page 9]
+
+
+
+Bormann                   Expires 21 June 2024                  [Page 9]
 
-Internet-Draft            CDDL Module Structure             October 2023
+Internet-Draft            CDDL Module Structure            December 2023
 
 
    In other words, the module synthesized from the command line had an
@@ -557,9 +557,9 @@ Internet-Draft            CDDL Module Structure             October 2023
 
 
 
-Bormann                   Expires 4 April 2024                 [Page 10]
+Bormann                   Expires 21 June 2024                 [Page 10]
 
-Internet-Draft            CDDL Module Structure             October 2023
+Internet-Draft            CDDL Module Structure            December 2023
 
 
    [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
@@ -613,9 +613,9 @@ Appendix A.  ABNF Specification
 
 
 
-Bormann                   Expires 4 April 2024                 [Page 11]
+Bormann                   Expires 21 June 2024                 [Page 11]
 
-Internet-Draft            CDDL Module Structure             October 2023
+Internet-Draft            CDDL Module Structure            December 2023
 
 
    directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
@@ -630,13 +630,14 @@ Internet-Draft            CDDL Module Structure             October 2023
    SP = %x20
    CRLF = %x0A / %x0D.0A
 
-Appendix B.  A CDDL 2.0 Tool
+Appendix B.  A CDDL Tool that Implements CDDL Module Structure
 
    This appendix is for information only.
 
-   A rough CDDL 2.0 tool is available [cddlc].  It can process CDDL 2.0
-   models into CDDL 1 models that can then be processed by the CDDL tool
-   described in Appendix F of [RFC8610].
+   A rough CDDL tool is available [cddlc].  It can process module-
+   structured CDDL models into basic CDDL models that can then be
+   processed by the original CDDL tool described in Appendix F of
+   [RFC8610].
 
    A typical command line involving both tools might be:
 
@@ -646,7 +647,8 @@ Appendix B.  A CDDL 2.0 Tool
 
    gem install cddlc
 
-   The present document assumes the use of cddlc version 0.1.8.
+   The present document assumes the use of cddlc of at least version
+   0.1.8.
 
 Acknowledgments
 
@@ -667,6 +669,4 @@ Author's Address
 
 
 
-
-
-Bormann                   Expires 4 April 2024                 [Page 12]
+Bormann                   Expires 21 June 2024                 [Page 12]

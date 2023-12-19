@@ -19,30 +19,25 @@ Hence, there is a need for evolution of the base CDDL
 specification itself. 
        The present document defines a backward- and forward-compatible
 way to add a module structure to CDDL. 
-       Previous versions of the changes in this document were part
-of draft-bormann-cbor-cddl-2-draft and previously
-draft-bormann-cbor-cddl-freezer.
-This submission extracts out the functionality that is ready
-for further WG work. 
     " name="description">
-<meta content="xml2rfc 3.18.0" name="generator">
+<meta content="xml2rfc 3.19.0" name="generator">
 <meta content="Concise Data Definition Language" name="keyword">
 <meta content="draft-ietf-cbor-cddl-modules-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.18.0
-    Python 3.11.5
-    ConfigArgParse 1.5.3
+  xml2rfc 3.19.0
+    Python 3.11.6
+    ConfigArgParse 1.7
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.10.0
+    platformdirs 4.1.0
     pycountry 22.3.5
-    PyYAML 6.0
+    PyYAML 6.0.1
     requests 2.31.0
-    setuptools 67.7.2
+    setuptools 68.2.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.12
 -->
 <link href="draft-ietf-cbor-cddl-modules.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1041,11 +1036,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CDDL Module Structure</td>
-<td class="right">October 2023</td>
+<td class="right">December 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Bormann</td>
-<td class="center">Expires 4 April 2024</td>
+<td class="center">Expires 21 June 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1058,12 +1053,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cbor-cddl-modules-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-10-02" class="published">2 October 2023</time>
+<time datetime="2023-12-19" class="published">19 December 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-04-04">4 April 2024</time></dd>
+<dd class="expires"><time datetime="2024-06-21">21 June 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1088,11 +1083,6 @@ Hence, there is a need for evolution of the base CDDL
 specification itself.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
 <p id="section-abstract-3">The present document defines a backward- and forward-compatible
 way to add a module structure to CDDL.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
-<p id="section-abstract-4"><span class="cref" id="status">Previous versions of the changes in this document were part
-of draft-bormann-cbor-cddl-2-draft and previously
-draft-bormann-cbor-cddl-freezer.
-This submission extracts out the functionality that is ready
-for further WG work.</span><a href="#section-abstract-4" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1129,7 +1119,7 @@ for further WG work.</span><a href="#section-abstract-4" class="pilcrow">¶</a><
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 April 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 21 June 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1221,7 +1211,7 @@ for further WG work.</span><a href="#section-abstract-4" class="pilcrow">¶</a><
             <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref">Appendix A</a>.  <a href="#name-abnf-specification" class="internal xref">ABNF Specification</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref">Appendix B</a>.  <a href="#name-a-cddl-20-tool" class="internal xref">A CDDL 2.0 Tool</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref">Appendix B</a>.  <a href="#name-a-cddl-tool-that-implements" class="internal xref">A CDDL Tool that Implements CDDL Module Structure</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
             <p id="section-toc.1-1.8.1"><a href="#appendix-C" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
@@ -1250,19 +1240,11 @@ Hence, there is a need for evolution of the base CDDL
 specification itself.<a href="#section-1-2" class="pilcrow">¶</a></p>
 <p id="section-1-3">The present document defines a backward- and forward-compatible
 way to add a module structure to CDDL.<a href="#section-1-3" class="pilcrow">¶</a></p>
-<p id="section-1-4"><span class="cref" id="status_1">Previous versions of the changes in this document were part
-of draft-bormann-cbor-cddl-2-draft and previously
-draft-bormann-cbor-cddl-freezer.
-This submission extracts out the functionality that is ready
-for further WG work.</span><a href="#section-1-4" class="pilcrow">¶</a></p>
-<p id="section-1-5"><span class="cref" id="seealso">Proposals for additional functionality that needs more
-work can be found in <span>[<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span>.  Proposals for other
-additions to the CDDL specification base are in <span>[<a href="#I-D.draft-bormann-cbor-cddl-freezer" class="cite xref">I-D.draft-bormann-cbor-cddl-freezer</a>]</span>.</span><a href="#section-1-5" class="pilcrow">¶</a></p>
-<p id="section-1-6">The present document is intended to be the specification
-base of what has colloquially been called CDDL 2.0, a term hat is now
-focusing on module structure (other documents make up what is now
+<p id="section-1-4">The present document is intended to be the specification
+base of what has colloquially been called CDDL 2.0, a term that is now
+focusing on module structure (other documents make up what is now sometimes
 called CDDL 1.1).
-Additional documents describe further work on CDDL.<a href="#section-1-6" class="pilcrow">¶</a></p>
+Additional documents describe further work on CDDL.<a href="#section-1-4" class="pilcrow">¶</a></p>
 <div id="conventions-and-definitions">
 <section id="section-1.1">
         <h3 id="name-conventions-and-definitions">
@@ -1294,35 +1276,36 @@ appear in all capitals, as shown here.<a href="#section-1.1-2" class="pilcrow">�
 expressed in a few lines.  As the size of data models that need to be
 expressed in CDDL has increased, the need to modularize and re-use
 components is increasing.<a href="#section-2-2" class="pilcrow">¶</a></p>
-<p id="section-2-3">CDDL 1.0 has been designed with a crude form of composition:
+<p id="section-2-3">CDDL as documented in <span>[<a href="#RFC8610" class="cite xref">RFC8610</a>]</span> (<em>basic CDDL</em>) has been designed with a crude form of composition:
 Concatenating a number of CDDL snippets creates a valid CDDL data
 model unless there is a name collision (identical redefinition is
 allowed to facilitate this approach).
 With larger models, managing the name space to avoid collisions
 becomes more pressing.<a href="#section-2-3" class="pilcrow">¶</a></p>
-<p id="section-2-4">The knowledge which CDDL snippets need to be concatenated in order to
-obtain the desired data model lives entirely outside the CDDL snippets
-in CDDL 1.0.
-In CDDL 2.0, rules are packaged as modules and referenced from other
+<p id="section-2-4">In CDDL's original composition model,
+the knowledge which CDDL snippets need to be concatenated in order to
+obtain the desired data model lives entirely outside the CDDL snippets.
+With the module structure defined in the present document, rules are
+packaged as modules and referenced from other
 modules, providing methods for control of namespace pollution.<a href="#section-2-4" class="pilcrow">¶</a></p>
 <p id="section-2-5">Further work may be expended on
 unambiguous referencing into evolving specifications ("versioning")
 and selection of alternatives (as was emulated with snippets in
 <span><a href="https://rfc-editor.org/rfc/rfc8428#section-11" class="relref">Section 11</a> of [<a href="#RFC8428" class="cite xref">RFC8428</a>]</span>.  Note that one approach for expressing
 variants is demonstrated in <span>[<a href="#useful" class="cite xref">useful</a>]</span> based on <span><a href="https://rfc-editor.org/rfc/rfc9165#section-4" class="relref">Section 4</a> of [<a href="#RFC9165" class="cite xref">RFC9165</a>]</span>).
-See also <span><a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-03#section-4" class="relref">Section 4</a> of [<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+Potential further work is outlined in Sections <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-03#section-4" class="relref">4</a> and <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-03#appendix-A.2" class="relref">A.2</a> of <span>[<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <div id="compatibility">
 <section id="section-2.1">
         <h3 id="name-compatibility">
 <a href="#section-2.1" class="section-number selfRef">2.1. </a><a href="#name-compatibility" class="section-name selfRef">Compatibility</a>
         </h3>
 <p id="section-2.1-1">To achieve the module structure in a way that is friendly to
-existing environments that operate with CDDL 1.0 snippets and CDDL 1.0
+existing environments that operate with CDDL and basic CDDL
 implementations, we add a super-syntax (similar to the way pragmas
 are often added to a language), by carrying them in what is
-parsed as comments in CDDL 1.0.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
-<p id="section-2.1-2">This enables each module source file to be valid CDDL\ 1 (but
-possibly needing to add some rule definitions imported from other
+parsed as comments in basic CDDL.<a href="#section-2.1-1" class="pilcrow">¶</a></p>
+<p id="section-2.1-2">This enables each module source file to be basic CDDL on its own (possibly
+needing to add some rule definitions imported from other
 source files).<a href="#section-2.1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1353,7 +1336,8 @@ however, importing a module may involve transforming its rule names
 into a new namespace (<a href="#namespacing" class="auto internal xref">Section 2.2</a>).<a href="#section-2.3-2" class="pilcrow">¶</a></p>
 <p id="section-2.3-3">Directives look like comments in CDDL 1, so they do not interfere
 with forward compatibility.<a href="#section-2.3-3" class="pilcrow">¶</a></p>
-<p id="section-2.3-4">Lines starting with the prefix <code>;#</code> are parsed as directives in CDDL 2.0.<a href="#section-2.3-4" class="pilcrow">¶</a></p>
+<p id="section-2.3-4">In the CDDL module structure, lines starting with the prefix <code>;#</code> are
+parsed as directives.<a href="#section-2.3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="naming-and-finding-modules">
@@ -1362,7 +1346,7 @@ with forward compatibility.<a href="#section-2.3-3" class="pilcrow">¶</a></p>
 <a href="#section-2.4" class="section-number selfRef">2.4. </a><a href="#name-naming-and-finding-modules" class="section-name selfRef">Naming and Finding Modules</a>
         </h3>
 <p id="section-2.4-1">We assume that module names are filenames taken from one of several
-source directories available to the CDDL 2.0 processor via the
+source directories available to the CDDL module structure processor via the
 environment.
 This avoids the need to nail down brittle pathnames or (partial?) URIs
 into the CDDL files.<a href="#section-2.4-1" class="pilcrow">¶</a></p>
@@ -1371,7 +1355,8 @@ between them are established is intentionally not fully defined in
 this specification; it is expected that this will be specified in the
 context of the models just as the way they are intended to be used
 will be.  (A more formal structure may follow later.)<a href="#section-2.4-2" class="pilcrow">¶</a></p>
-<p id="section-2.4-3">In the CDDL 2.0 Tool described in <a href="#cddlc-tool" class="auto internal xref">Appendix B</a>, the set of sources is
+<p id="section-2.4-3">In the module structure implementation that is part of the CDDL Tool
+described in <a href="#cddlc-tool" class="auto internal xref">Appendix B</a>, the set of sources is
 determined from an environment variable, <code>CDDL_INCLUDE_PATH</code>, which is
 modeled after usual command-line search paths.
 It is a colon-separated list of pathnames to directories, with one
@@ -1390,8 +1375,8 @@ extract CDDL modules from github and from Internet-Drafts; see
 <p id="section-2.4-7">That is: files are found in the current directory (<code>.</code>) and, if not
 found there, cddlc’s collection.<a href="#section-2.4-7" class="pilcrow">¶</a></p>
 <p id="section-2.4-8">In the examples following, a cddlc command line will be shown
-(starting with an isolated <code>$</code> sign) with the CDDL 2.0 input; the
-resulting CDDL 1 will be shown separately.<a href="#section-2.4-8" class="pilcrow">¶</a></p>
+(starting with an isolated <code>$</code> sign) with the module-structured CDDL input; the
+resulting basic CDDL will be shown separately.<a href="#section-2.4-8" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="directives">
@@ -1402,14 +1387,14 @@ resulting CDDL 1 will be shown separately.<a href="#section-2.4-8" class="pilcro
 <p id="section-2.5-1">Two groups of directives are defined at this point:<a href="#section-2.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-2.5-2.1">
-            <code>include</code>, which includes all the rules from a module (which
+            <p id="section-2.5-2.1.1"><code>include</code>, which includes all the rules from a module (which
 includes the ones imported/included there, transitively), or
-specific explicitly selected rules (clause ending in "from");<a href="#section-2.5-2.1" class="pilcrow">¶</a>
+specific explicitly selected rules (clause ending in "from");<a href="#section-2.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
           <li class="normal" id="section-2.5-2.2">
-            <code>import</code>, which includes only those rules from the module that are
+            <p id="section-2.5-2.2.1"><code>import</code>, which includes only those rules from the module that are
  referenced, implicitly or explicitly (clause ending in "from"), including the
- rules that are referenced from these rules, transitively.<a href="#section-2.5-2.2" class="pilcrow">¶</a>
+ rules that are referenced from these rules, transitively.<a href="#section-2.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <p id="section-2.5-3">The <code>include</code> function is more useful for composing a single model
@@ -1763,12 +1748,13 @@ CRLF = %x0A / %x0D.0A
 </div>
 <div id="cddlc-tool">
 <section id="appendix-B">
-      <h2 id="name-a-cddl-20-tool">
-<a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-a-cddl-20-tool" class="section-name selfRef">A CDDL 2.0 Tool</a>
+      <h2 id="name-a-cddl-tool-that-implements">
+<a href="#appendix-B" class="section-number selfRef">Appendix B. </a><a href="#name-a-cddl-tool-that-implements" class="section-name selfRef">A CDDL Tool that Implements CDDL Module Structure</a>
       </h2>
 <p id="appendix-B-1">This appendix is for information only.<a href="#appendix-B-1" class="pilcrow">¶</a></p>
-<p id="appendix-B-2">A rough CDDL 2.0 tool is available <span>[<a href="#cddlc" class="cite xref">cddlc</a>]</span>.  It can process CDDL 2.0
-models into CDDL 1 models that can then be processed by the CDDL
+<p id="appendix-B-2">A rough CDDL tool is available <span>[<a href="#cddlc" class="cite xref">cddlc</a>]</span>.  It can process
+module-structured CDDL models into basic CDDL models that can then be
+processed by the original CDDL
 tool described in <span><a href="https://rfc-editor.org/rfc/rfc8610#appendix-F" class="relref">Appendix F</a> of [<a href="#RFC8610" class="cite xref">RFC8610</a>]</span>.<a href="#appendix-B-2" class="pilcrow">¶</a></p>
 <p id="appendix-B-3">A typical command line involving both tools might be:<a href="#appendix-B-3" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="appendix-B-4">
@@ -1782,7 +1768,7 @@ cddlc -2 -tcddl mytestfile.cddl | cddl - gp 10
 gem install cddlc
 </pre><a href="#appendix-B-6" class="pilcrow">¶</a>
 </div>
-<p id="appendix-B-7">The present document assumes the use of <code>cddlc</code> version 0.1.8.<a href="#appendix-B-7" class="pilcrow">¶</a></p>
+<p id="appendix-B-7">The present document assumes the use of <code>cddlc</code> of at least version 0.1.8.<a href="#appendix-B-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="acknowledgments">
