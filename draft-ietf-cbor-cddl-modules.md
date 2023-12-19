@@ -35,11 +35,11 @@ author:
 normative:
   RFC8610: cddl
   RFC9165: control1
-  RFC5234: abnf
+  STD68: abnf # RFC5234
   RFC7405: abnf-case
 
 informative:
-  I-D.draft-bormann-cbor-cddl-freezer: freezer
+#  I-D.draft-bormann-cbor-cddl-freezer: freezer
   I-D.bormann-cbor-cddl-2-draft: cddl-2-draft
   useful:
     target: https://github.com/cbor-wg/cddl/wiki/Useful-CDDL
@@ -157,7 +157,7 @@ The semantics of the module are independent of the module(s) using it,
 however, importing a module may involve transforming its rule names
 into a new namespace ({{namespacing}}).
 
-Directives look like comments in CDDL 1, so they do not interfere
+Directives look like comments in basic CDDL, so they do not interfere
 with forward compatibility.
 
 In the CDDL module structure, lines starting with the prefix `;#` are
@@ -306,7 +306,9 @@ This document has no IANA actions.
 ABNF Specification
 =================================
 
-TO DO
+This section specifies the grammar employed by the module structure
+directives using the ABNF language defined in {{-abnf}} and
+{{-abnf-case}}.
 
 ~~~ abnf
 directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
