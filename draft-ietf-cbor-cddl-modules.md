@@ -69,31 +69,15 @@ informative:
     The present document defines a backward- and forward-compatible
     way to add a module structure to CDDL.
 
-[^status]
-
-[^status]: Previous versions of the changes in this document were part
-    of draft-bormann-cbor-cddl-2-draft and previously
-    draft-bormann-cbor-cddl-freezer.
-    This submission extracts out the functionality that is ready
-    for further WG work.
-
 --- middle
 
 # Introduction
 
 [^abs1-]
 
-[^status]
-
-[^seealso]
-
-[^seealso]: Proposals for additional functionality that needs more
-    work can be found in {{-cddl-2-draft}}.  Proposals for other
-    additions to the CDDL specification base are in {{-freezer}}.
-
 The present document is intended to be the specification
-base of what has colloquially been called CDDL 2.0, a term hat is now
-focusing on module structure (other documents make up what is now
+base of what has colloquially been called CDDL 2.0, a term that is now
+focusing on module structure (other documents make up what is now sometimes
 called CDDL 1.1).
 Additional documents describe further work on CDDL.
 
@@ -115,17 +99,18 @@ expressed in a few lines.  As the size of data models that need to be
 expressed in CDDL has increased, the need to modularize and re-use
 components is increasing.
 
-CDDL 1.0 has been designed with a crude form of composition:
+CDDL as documented in {{-cddl}} (_basic CDDL_) has been designed with a crude form of composition:
 Concatenating a number of CDDL snippets creates a valid CDDL data
 model unless there is a name collision (identical redefinition is
 allowed to facilitate this approach).
 With larger models, managing the name space to avoid collisions
 becomes more pressing.
 
-The knowledge which CDDL snippets need to be concatenated in order to
-obtain the desired data model lives entirely outside the CDDL snippets
-in CDDL 1.0.
-In CDDL 2.0, rules are packaged as modules and referenced from other
+In CDDL's original composition model,
+the knowledge which CDDL snippets need to be concatenated in order to
+obtain the desired data model lives entirely outside the CDDL snippets.
+With the module structure defined in the present document, rules are
+packaged as modules and referenced from other
 modules, providing methods for control of namespace pollution.
 
 Further work may be expended on
@@ -133,19 +118,19 @@ unambiguous referencing into evolving specifications ("versioning")
 and selection of alternatives (as was emulated with snippets in
 {{Section 11 of ?RFC8428}}.  Note that one approach for expressing
 variants is demonstrated in {{useful}} based on {{Section 4 of RFC9165}}).
-See also {{Section 4 of -cddl-2-draft}}.
+Potential further work is outlined in {{Sections 4 and A.2 of -cddl-2-draft}}.
 
 Compatibility
 -------------
 
 To achieve the module structure in a way that is friendly to
-existing environments that operate with CDDL 1.0 snippets and CDDL 1.0
+existing environments that operate with CDDL and basic CDDL
 implementations, we add a super-syntax (similar to the way pragmas
 are often added to a language), by carrying them in what is
-parsed as comments in CDDL 1.0.
+parsed as comments in basic CDDL.
 
-This enables each module source file to be valid CDDL\ 1 (but
-possibly needing to add some rule definitions imported from other
+This enables each module source file to be basic CDDL on its own (possibly
+needing to add some rule definitions imported from other
 source files).
 
 
@@ -175,13 +160,14 @@ into a new namespace ({{namespacing}}).
 Directives look like comments in CDDL 1, so they do not interfere
 with forward compatibility.
 
-Lines starting with the prefix `;#` are parsed as directives in CDDL 2.0.
+In the CDDL module structure, lines starting with the prefix `;#` are
+parsed as directives.
 
 Naming and Finding Modules
 ---------------
 
 We assume that module names are filenames taken from one of several
-source directories available to the CDDL 2.0 processor via the
+source directories available to the CDDL module structure processor via the
 environment.
 This avoids the need to nail down brittle pathnames or (partial?) URIs
 into the CDDL files.
@@ -192,7 +178,8 @@ this specification; it is expected that this will be specified in the
 context of the models just as the way they are intended to be used
 will be.  (A more formal structure may follow later.)
 
-In the CDDL 2.0 Tool described in {{cddlc-tool}}, the set of sources is
+In the module structure implementation that is part of the CDDL Tool
+described in {{cddlc-tool}}, the set of sources is
 determined from an environment variable, `CDDL_INCLUDE_PATH`, which is
 modeled after usual command-line search paths.
 It is a colon-separated list of pathnames to directories, with one
@@ -214,8 +201,8 @@ That is: files are found in the current directory (`.`) and, if not
 found there, cddlc’s collection.
 
 In the examples following, a cddlc command line will be shown
-(starting with an isolated `$` sign) with the CDDL 2.0 input; the
-resulting CDDL 1 will be shown separately.
+(starting with an isolated `$` sign) with the module-structured CDDL input; the
+resulting basic CDDL will be shown separately.
 
 Basic Set of Directives {#directives}
 -------------------------
@@ -335,13 +322,14 @@ SP = %x20
 CRLF = %x0A / %x0D.0A
 ~~~
 
-A CDDL 2.0 Tool {#cddlc-tool}
+A CDDL Tool that Implements CDDL Module Structure {#cddlc-tool}
 ===============
 
 This appendix is for information only.
 
-A rough CDDL 2.0 tool is available {{cddlc}}.  It can process CDDL 2.0
-models into CDDL 1 models that can then be processed by the CDDL
+A rough CDDL tool is available {{cddlc}}.  It can process
+module-structured CDDL models into basic CDDL models that can then be
+processed by the original CDDL
 tool described in {{Appendix F of -cddl}}.
 
 A typical command line involving both tools might be:
@@ -354,7 +342,7 @@ Install on a system with a modern Ruby (Ruby version ≥ 3.0) via:
 
     gem install cddlc
 
-The present document assumes the use of `cddlc` version 0.1.8.
+The present document assumes the use of `cddlc` of at least version 0.1.8.
 
 
 # Acknowledgments
