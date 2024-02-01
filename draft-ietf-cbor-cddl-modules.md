@@ -30,6 +30,10 @@ author:
     country: Germany
     phone: +49-421-218-63921
     email: cabo@tzi.org
+  -
+    name: Brendan Moran
+    organization: Arm Limited
+    email: brendan.moran.ietf@gmail.com
 
 
 normative:
