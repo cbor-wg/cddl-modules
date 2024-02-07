@@ -4,8 +4,9 @@
 
 CBOR Maintenance and Extensions                               C. Bormann
 Internet-Draft                                    Universität Bremen TZI
-Intended status: Standards Track                        19 December 2023
-Expires: 21 June 2024
+Intended status: Standards Track                                B. Moran
+Expires: 10 August 2024                                      Arm Limited
+                                                         7 February 2024
 
 
                          CDDL Module Structure
@@ -52,10 +53,9 @@ Status of This Memo
 
 
 
-
-Bormann                   Expires 21 June 2024                  [Page 1]
+Bormann & Moran          Expires 10 August 2024                 [Page 1]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    Internet-Drafts are working documents of the Internet Engineering
@@ -68,11 +68,11 @@ Internet-Draft            CDDL Module Structure            December 2023
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 21 June 2024.
+   This Internet-Draft will expire on 10 August 2024.
 
 Copyright Notice
 
-   Copyright (c) 2023 IETF Trust and the persons identified as the
+   Copyright (c) 2024 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -104,17 +104,17 @@ Table of Contents
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .  10
      5.2.  Informative References  . . . . . . . . . . . . . . . . .  11
    Appendix A.  ABNF Specification . . . . . . . . . . . . . . . . .  11
-   Appendix B.  A CDDL Tool that Implements CDDL Module Structure  .  11
+   Appendix B.  A CDDL Tool that Implements CDDL Module Structure  .  12
    Acknowledgments . . . . . . . . . . . . . . . . . . . . . . . . .  12
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 2]
+Bormann & Moran          Expires 10 August 2024                 [Page 2]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .  12
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  12
 
 1.  Introduction
 
@@ -165,9 +165,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 3]
+Bormann & Moran          Expires 10 August 2024                 [Page 3]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    In CDDL's original composition model, the knowledge which CDDL
@@ -221,9 +221,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 4]
+Bormann & Moran          Expires 10 August 2024                 [Page 4]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    Directives look like comments in basic CDDL, so they do not interfere
@@ -277,9 +277,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 5]
+Bormann & Moran          Expires 10 August 2024                 [Page 5]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    *  include, which includes all the rules from a module (which
@@ -333,9 +333,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 6]
+Bormann & Moran          Expires 10 August 2024                 [Page 6]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    start = cose.COSE_Key
@@ -389,9 +389,9 @@ include
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 7]
+Bormann & Moran          Expires 10 August 2024                 [Page 7]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
 import
@@ -445,9 +445,9 @@ import
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 8]
+Bormann & Moran          Expires 10 August 2024                 [Page 8]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    mydata = {"Fritz" => cose.empty_or_serialized_map}
@@ -501,9 +501,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                  [Page 9]
+Bormann & Moran          Expires 10 August 2024                 [Page 9]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    In other words, the module synthesized from the command line had an
@@ -557,9 +557,9 @@ Internet-Draft            CDDL Module Structure            December 2023
 
 
 
-Bormann                   Expires 21 June 2024                 [Page 10]
+Bormann & Moran          Expires 10 August 2024                [Page 10]
 
-Internet-Draft            CDDL Module Structure            December 2023
+Internet-Draft            CDDL Module Structure            February 2024
 
 
    [RFC9165]  Bormann, C., "Additional Control Operators for the Concise
@@ -568,7 +568,11 @@ Internet-Draft            CDDL Module Structure            December 2023
               <https://www.rfc-editor.org/rfc/rfc9165>.
 
    [STD68]    Crocker, D., Ed. and P. Overell, "Augmented BNF for Syntax
-              Specifications: ABNF", STD 68, RFC 5234, January 2008.
+              Specifications: ABNF", STD 68, RFC 5234,
+              DOI 10.17487/RFC5234, January 2008,
+              <https://www.rfc-editor.org/info/rfc5234>.
+
+              <https://www.rfc-editor.org/info/std68>
 
 5.2.  Informative References
 
@@ -606,17 +610,17 @@ Appendix A.  ABNF Specification
    SP = %x20
    CRLF = %x0A / %x0D.0A
 
+
+
+
+Bormann & Moran          Expires 10 August 2024                [Page 11]
+
+Internet-Draft            CDDL Module Structure            February 2024
+
+
 Appendix B.  A CDDL Tool that Implements CDDL Module Structure
 
    This appendix is for information only.
-
-
-
-
-Bormann                   Expires 21 June 2024                 [Page 11]
-
-Internet-Draft            CDDL Module Structure            December 2023
-
 
    A rough CDDL tool is available [cddlc].  It can process module-
    structured CDDL models into basic CDDL models that can then be
@@ -638,7 +642,7 @@ Acknowledgments
 
    TODO acknowledge.
 
-Author's Address
+Authors' Addresses
 
    Carsten Bormann
    Universität Bremen TZI
@@ -649,6 +653,9 @@ Author's Address
    Email: cabo@tzi.org
 
 
+   Brendan Moran
+   Arm Limited
+   Email: brendan.moran.ietf@gmail.com
 
 
 
@@ -662,11 +669,4 @@ Author's Address
 
 
 
-
-
-
-
-
-
-
-Bormann                   Expires 21 June 2024                 [Page 12]
+Bormann & Moran          Expires 10 August 2024                [Page 12]
