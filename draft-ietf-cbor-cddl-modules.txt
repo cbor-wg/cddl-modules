@@ -409,8 +409,11 @@ import
 
    The transitive closure of the rules mentioned is included:
 
-   mydata = {"Fritz" => cose.empty_or_serialized_map}
-   cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+
+   mydata = {Fritz: cose.empty_or_serialized_map}
+   cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .\
+                                                                  size 0
    cose.header_map = {
      cose.Generic_Headers,
      * cose.label => cose.values,
@@ -442,17 +445,17 @@ import
 
 
 
-
-
-
 Bormann & Moran          Expires 10 August 2024                 [Page 8]
 
 Internet-Draft            CDDL Module Structure            February 2024
 
 
-   mydata = {"Fritz" => cose.empty_or_serialized_map}
+   =============== NOTE: '\' line wrapping per RFC 8792 ================
+
+   mydata = {Fritz: cose.empty_or_serialized_map}
    empty_or_serialized_map = cose.empty_or_serialized_map
-   cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
+   cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .\
+                                                                  size 0
    cose.header_map = {
      cose.Generic_Headers,
      * cose.label => cose.values,
@@ -495,9 +498,6 @@ Internet-Draft            CDDL Module Structure            February 2024
    }
    cose.label = int / tstr
    cose.values = any
-
-
-
 
 
 
