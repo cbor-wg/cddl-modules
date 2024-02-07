@@ -5,7 +5,7 @@ mydata = {Fritz: cose.empty_or_serialized_map}
 :::
 ~~~
 ::: check
-mydata = {"Fritz" => cose.empty_or_serialized_map}
+mydata = {Fritz: cose.empty_or_serialized_map}
 empty_or_serialized_map = cose.empty_or_serialized_map
 cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
 cose.header_map = {
@@ -30,3 +30,4 @@ Note how an additional rule provides an alias for
 ::: output
 :::
 ~~~
+{: post="fold"}
