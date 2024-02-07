@@ -10,7 +10,7 @@ Note how an additional rule provides an alias for
 `empty_or_serialized_map` that does not have the namespace prefix:
 
 ~~~ cddl
-mydata = {"Fritz" => cose.empty_or_serialized_map}
+mydata = {Fritz: cose.empty_or_serialized_map}
 empty_or_serialized_map = cose.empty_or_serialized_map
 cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
 cose.header_map = {
@@ -28,3 +28,4 @@ cose.label = int / tstr
 cose.values = any
 
 ~~~
+{: post="fold"}

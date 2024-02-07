@@ -9,7 +9,7 @@ mydata = {Fritz: cose.empty_or_serialized_map}
 The transitive closure of the rules mentioned is included:
 
 ~~~ cddl
-mydata = {"Fritz" => cose.empty_or_serialized_map}
+mydata = {Fritz: cose.empty_or_serialized_map}
 cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
 cose.header_map = {
   cose.Generic_Headers,
@@ -26,3 +26,4 @@ cose.label = int / tstr
 cose.values = any
 
 ~~~
+{: post="fold"}
