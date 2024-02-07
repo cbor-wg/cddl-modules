@@ -1537,9 +1537,11 @@ mydata = {Fritz: cose.empty_or_serialized_map}
 </div>
 <p id="section-2.6.2-4">The transitive closure of the rules mentioned is included:<a href="#section-2.6.2-4" class="pilcrow">¶</a></p>
 <div class="lang-cddl sourcecode" id="section-2.6.2-5">
-<pre>
-mydata = {"Fritz" =&gt; cose.empty_or_serialized_map}
-cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
+<pre>=============== NOTE: '\' line wrapping per RFC 8792 ================
+
+mydata = {Fritz: cose.empty_or_serialized_map}
+cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .\
+                                                               size 0
 cose.header_map = {
   cose.Generic_Headers,
   * cose.label =&gt; cose.values,
@@ -1553,7 +1555,6 @@ cose.Generic_Headers = (
   )
 cose.label = int / tstr
 cose.values = any
-
 </pre><a href="#section-2.6.2-5" class="pilcrow">¶</a>
 </div>
 <p id="section-2.6.2-6">The <code>import</code> statement can also request an alias for an imported name:<a href="#section-2.6.2-6" class="pilcrow">¶</a></p>
@@ -1568,10 +1569,12 @@ mydata = {Fritz: cose.empty_or_serialized_map}
 <p id="section-2.6.2-8">Note how an additional rule provides an alias for
 <code>empty_or_serialized_map</code> that does not have the namespace prefix:<a href="#section-2.6.2-8" class="pilcrow">¶</a></p>
 <div class="lang-cddl sourcecode" id="section-2.6.2-9">
-<pre>
-mydata = {"Fritz" =&gt; cose.empty_or_serialized_map}
+<pre>=============== NOTE: '\' line wrapping per RFC 8792 ================
+
+mydata = {Fritz: cose.empty_or_serialized_map}
 empty_or_serialized_map = cose.empty_or_serialized_map
-cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .size 0
+cose.empty_or_serialized_map = bstr .cbor cose.header_map / bstr .\
+                                                               size 0
 cose.header_map = {
   cose.Generic_Headers,
   * cose.label =&gt; cose.values,
@@ -1585,7 +1588,6 @@ cose.Generic_Headers = (
   )
 cose.label = int / tstr
 cose.values = any
-
 </pre><a href="#section-2.6.2-9" class="pilcrow">¶</a>
 </div>
 </section>
