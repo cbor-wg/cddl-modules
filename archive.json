@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-06T00:52:17.407072+00:00",
+  "timestamp": "2024-02-08T00:52:00.086120+00:00",
   "repo": "cbor-wg/cddl-modules",
   "labels": [
     {
@@ -50,5 +50,46 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJH_9pM5mPOVy",
+      "title": "More text about security considerations arising from composition",
+      "url": "https://github.com/cbor-wg/cddl-modules/pull/1",
+      "state": "OPEN",
+      "author": "cabo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": ".. including supply-chain attacks and over-reliance on model-based input validation.",
+      "createdAt": "2024-02-07T09:29:41Z",
+      "updatedAt": "2024-02-07T10:55:50Z",
+      "baseRepository": "cbor-wg/cddl-modules",
+      "baseRefName": "main",
+      "baseRefOid": "14aaa5bb2c15f1db1835ae46281ecf5cf77b3b38",
+      "headRepository": "cbor-wg/cddl-modules",
+      "headRefName": "seccons",
+      "headRefOid": "ec04956f6339e95aefcd2fe56ba0ebe207dbe2ec",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJH_9pM5vT_gD",
+          "commit": {
+            "abbreviatedOid": "ec04956"
+          },
+          "author": "bremoran",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-07T10:55:50Z",
+          "updatedAt": "2024-02-07T10:55:50Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
 }
