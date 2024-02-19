@@ -45,6 +45,7 @@ normative:
 informative:
 #  I-D.draft-bormann-cbor-cddl-freezer: freezer
   I-D.bormann-cbor-cddl-2-draft: cddl-2-draft
+  I-D.bormann-t2trg-deref-id: deref
   useful:
     target: https://github.com/cbor-wg/cddl/wiki/Useful-CDDL
     title: Useful CDDL
@@ -297,8 +298,24 @@ into the CDDL models they employ operationally.
 This specification does not define how the source directories accessed
 via the CDDL_INCLUDE_PATH are populated; this process needs to undergo
 the same care and scrutiny as any other introduction of source code
-into a build environment.
+into a build environment; the possibility of supply-chain attacks on
+the modules imported needs to be considered.
 
+Specifically, implementations that rely on model-based input
+validation for enforcing certain properties of the data structure
+ingested (which, if not validated, could lead to malfunctions such as
+crashes and remote code execution) need to be particularly careful
+about the data models they apply, including their provenance and
+potential changes of these properties that upgrades to the referenced
+modules may (inadvertently or as part of an attack) cause.
+More generally speaking, implementations should strive to be robust
+against limitations of the model-based input validation mechanisms and
+their implementations that they employ.
+
+In applications that dynamically acquire models and dereference module
+references in these, the security considerations of dereferenceable
+identifiers apply (see {{-deref}} for a more extensive discussion of
+dereferenceable identifiers).
 
 # IANA Considerations
 
