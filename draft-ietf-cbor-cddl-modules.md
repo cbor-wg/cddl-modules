@@ -44,6 +44,8 @@ normative:
 
 informative:
 #  I-D.draft-bormann-cbor-cddl-freezer: freezer
+  I-D.ietf-cbor-update-8610-grammar: grammar
+  I-D.ietf-cbor-cddl-more-control: control2
   I-D.bormann-cbor-cddl-2-draft: cddl-2-draft
   I-D.bormann-t2trg-deref-id: deref
   useful:
@@ -65,11 +67,9 @@ informative:
     The latter has used the extension point provided in RFC 8610,
     the _control operator_.
 
-    As CDDL is being used in larger projects, the need for corrections
-    and additional features has become known that cannot be easily
+    As CDDL is being used in larger projects, the need for
+    features has become known that cannot be easily
     mapped into this single extension point.
-    Hence, there is a need for evolution of the base CDDL
-    specification itself.
 
     The present document defines a backward- and forward-compatible
     way to add a module structure to CDDL.
@@ -80,11 +80,12 @@ informative:
 
 [^abs1-]
 
-The present document is intended to be the specification
-base of what has colloquially been called CDDL 2.0, a term that is now
-focusing on module structure (other documents make up what is now sometimes
-called CDDL 1.1).
-Additional documents describe further work on CDDL.
+The functionality of the present document is considered a core part of
+what has colloquially been called CDDL 2.0, and is intended to be used
+with (and orthogonal to) other recent specifications such as a small
+set of CDDL grammar updates {{-grammar}} and an additional exercise of
+the control operator extension point {{-control2}} (a follow-up to
+{{-control1}}).
 
 ## Conventions and Definitions
 
