@@ -52,7 +52,7 @@ informative:
   cddlc:
     title: CDDL conversion utilities
     target: https://github.com/cabo/cddlc
-
+  RFC9052: cose
 
 --- abstract
 
@@ -89,6 +89,8 @@ Additional documents describe further work on CDDL.
 ## Conventions and Definitions
 
 The Terminology from {{-cddl}} applies.
+
+Some examples use CDDL definitions from {{-cose}}.
 
 {::boilerplate bcp14-tagged}
 
