@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-22T00:52:09.572771+00:00",
+  "timestamp": "2024-02-25T00:55:56.784455+00:00",
   "repo": "cbor-wg/cddl-modules",
   "labels": [
     {
@@ -92,6 +92,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOJH_9pM5n0SKh",
+      "title": "Editorial pass",
+      "url": "https://github.com/cbor-wg/cddl-modules/pull/2",
+      "state": "OPEN",
+      "author": "cabo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-24T10:12:09Z",
+      "updatedAt": "2024-02-24T10:12:09Z",
+      "baseRepository": "cbor-wg/cddl-modules",
+      "baseRefName": "main",
+      "baseRefOid": "9e409c8ff8bd9f418ce616d8665ce6925a836be7",
+      "headRepository": "cbor-wg/cddl-modules",
+      "headRefName": "editorial-pass",
+      "headRefOid": "d54d185c4a2b6f435d13c343156c236ca351cdbf",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
