@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-02-27T00:51:43.317025+00:00",
+  "timestamp": "2024-02-29T00:51:57.602937+00:00",
   "repo": "cbor-wg/cddl-modules",
   "labels": [
     {
@@ -49,7 +49,24 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 3,
+      "id": "I_kwDOJH_9pM6Agy1m",
+      "title": "Clarification on import name alias",
+      "url": "https://github.com/cbor-wg/cddl-modules/issues/3",
+      "state": "OPEN",
+      "author": "mguetschow",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "[Section 2.6](https://www.ietf.org/archive/id/draft-ietf-cbor-cddl-modules-01.html#name-import) states that \r\n\r\n> The import statement can also request an alias for an imported name\r\n\r\ngiving the following example\r\n```\r\n$ cddlc -2tcddl -\r\nmydata = {Fritz: cose.empty_or_serialized_map}\r\n;# import empty_or_serialized_map from rfc9052 as cose\r\n```\r\n\r\nFirst of all, I would suggest changing the `mydata` definition to actually use that alias instead of the namespaced version.\r\n\r\nBut it is also not completely clear to me how this alias definition is supposed to work - does it barely mean that for a given name, an additional rule is added without namespace (and the name needs to match the name in the imported module)? If so, the wording is a bit confusing to me.\r\n\r\nReading the sentence above, I would have expected syntax along the lines of\r\n```\r\n;# import empty_or_serialized_map as my_map from rfc9052 as cose\r\n```\r\nwhich would define `my_map` (without namespace) as an alias for `cose.empty_or_serialized_map`.",
+      "createdAt": "2024-02-27T09:20:49Z",
+      "updatedAt": "2024-02-27T09:20:49Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": [
     {
       "number": 1,
