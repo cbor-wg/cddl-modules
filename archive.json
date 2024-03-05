@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-03T00:55:12.998985+00:00",
+  "timestamp": "2024-03-05T00:52:10.855896+00:00",
   "repo": "cbor-wg/cddl-modules",
   "labels": [
     {
@@ -115,26 +115,42 @@
       "id": "PR_kwDOJH_9pM5n0SKh",
       "title": "Editorial pass",
       "url": "https://github.com/cbor-wg/cddl-modules/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "cabo",
       "authorAssociation": "CONTRIBUTOR",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2024-02-24T10:12:09Z",
-      "updatedAt": "2024-02-24T10:12:09Z",
+      "updatedAt": "2024-03-04T22:20:41Z",
       "baseRepository": "cbor-wg/cddl-modules",
       "baseRefName": "main",
       "baseRefOid": "9e409c8ff8bd9f418ce616d8665ce6925a836be7",
       "headRepository": "cbor-wg/cddl-modules",
       "headRefName": "editorial-pass",
       "headRefOid": "d54d185c4a2b6f435d13c343156c236ca351cdbf",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2024-03-04T22:20:41Z",
+      "mergedAt": "2024-03-04T22:20:41Z",
+      "mergedBy": "cabo",
+      "mergeCommit": {
+        "oid": "c8d973f20bea33f83111cd0edd7bb5066cbbd7ee"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJH_9pM5yKS4Z",
+          "commit": {
+            "abbreviatedOid": "d54d185"
+          },
+          "author": "bremoran",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I believe that this draft addresses all my concerns, though my rather philosophical comments still stand (and probably always will).",
+          "createdAt": "2024-03-04T20:43:38Z",
+          "updatedAt": "2024-03-04T20:43:38Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
