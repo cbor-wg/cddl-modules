@@ -5,8 +5,8 @@
 CBOR Maintenance and Extensions                               C. Bormann
 Internet-Draft                                    Universität Bremen TZI
 Intended status: Standards Track                                B. Moran
-Expires: 5 September 2024                                    Arm Limited
-                                                            4 March 2024
+Expires: 10 September 2024                                   Arm Limited
+                                                            9 March 2024
 
 
                          CDDL Module Structure
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 1]
+Bormann & Moran         Expires 10 September 2024               [Page 1]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -68,7 +68,7 @@ Internet-Draft            CDDL Module Structure               March 2024
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 September 2024.
+   This Internet-Draft will expire on 10 September 2024.
 
 Copyright Notice
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 2]
+Bormann & Moran         Expires 10 September 2024               [Page 2]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 3]
+Bormann & Moran         Expires 10 September 2024               [Page 3]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -221,7 +221,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 4]
+Bormann & Moran         Expires 10 September 2024               [Page 4]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 5]
+Bormann & Moran         Expires 10 September 2024               [Page 5]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -333,7 +333,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 6]
+Bormann & Moran         Expires 10 September 2024               [Page 6]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -389,7 +389,7 @@ include
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 7]
+Bormann & Moran         Expires 10 September 2024               [Page 7]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -445,7 +445,7 @@ import
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 8]
+Bormann & Moran         Expires 10 September 2024               [Page 8]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -501,7 +501,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024                [Page 9]
+Bormann & Moran         Expires 10 September 2024               [Page 9]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -557,7 +557,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024               [Page 10]
+Bormann & Moran         Expires 10 September 2024              [Page 10]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -613,7 +613,7 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024               [Page 11]
+Bormann & Moran         Expires 10 September 2024              [Page 11]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -669,7 +669,7 @@ Appendix A.  ABNF Specification
 
 
 
-Bormann & Moran         Expires 5 September 2024               [Page 12]
+Bormann & Moran         Expires 10 September 2024              [Page 12]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -725,7 +725,7 @@ Authors' Addresses
 
 
 
-Bormann & Moran         Expires 5 September 2024               [Page 13]
+Bormann & Moran         Expires 10 September 2024              [Page 13]
 
 Internet-Draft            CDDL Module Structure               March 2024
 
@@ -781,4 +781,4 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 5 September 2024               [Page 14]
+Bormann & Moran         Expires 10 September 2024              [Page 14]
