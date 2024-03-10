@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2024-03-07T00:42:39.740806+00:00",
+  "timestamp": "2024-03-10T00:56:06.033525+00:00",
   "repo": "cbor-wg/cddl-modules",
   "labels": [
     {
@@ -62,9 +62,17 @@
       "labels": [],
       "body": "[Section 2.6](https://www.ietf.org/archive/id/draft-ietf-cbor-cddl-modules-01.html#name-import) states that \r\n\r\n> The import statement can also request an alias for an imported name\r\n\r\ngiving the following example\r\n```\r\n$ cddlc -2tcddl -\r\nmydata = {Fritz: cose.empty_or_serialized_map}\r\n;# import empty_or_serialized_map from rfc9052 as cose\r\n```\r\n\r\nFirst of all, I would suggest changing the `mydata` definition to actually use that alias instead of the namespaced version.\r\n\r\nBut it is also not completely clear to me how this alias definition is supposed to work - does it barely mean that for a given name, an additional rule is added without namespace (and the name needs to match the name in the imported module)? If so, the wording is a bit confusing to me.\r\n\r\nReading the sentence above, I would have expected syntax along the lines of\r\n```\r\n;# import empty_or_serialized_map as my_map from rfc9052 as cose\r\n```\r\nwhich would define `my_map` (without namespace) as an alias for `cose.empty_or_serialized_map`.",
       "createdAt": "2024-02-27T09:20:49Z",
-      "updatedAt": "2024-02-27T09:20:49Z",
+      "updatedAt": "2024-03-09T10:23:44Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "cabo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Right.  The only \"automatic\" alias you can get is the one for \"unpacking\" single items from an import that uses a namespace that the imports are otherwise mapped into:\r\n\r\n```\r\n;# import empty_or_serialized_map from rfc9052 as cose\r\n```\r\n\u2794 \r\n```\r\n;# import cose.empty_or_serialized_map from rfc9052 as cose\r\nempty_or_serialized_map = cose.empty_or_serialized_map\r\n```\r\n\r\nFor any other alias, you need to add your own rule\r\n\r\n```\r\n;# import cose.empty_or_serialized_map from rfc9052 as cose\r\nmy_map = cose.empty_or_serialized_map\r\n```\r\n\r\nWe could add syntax to allow creating these, or we could let the spec writer simply write that additional rule.\r\n",
+          "createdAt": "2024-03-09T10:23:43Z",
+          "updatedAt": "2024-03-09T10:23:43Z"
+        }
+      ]
     }
   ],
   "pulls": [
