@@ -1,0 +1,178 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2024-06-04T00:58:37.582745+00:00",
+  "repo": "cbor-wg/cddl-modules",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 3,
+      "id": "I_kwDOJH_9pM6Agy1m",
+      "title": "Clarification on import name alias",
+      "url": "https://github.com/cbor-wg/cddl-modules/issues/3",
+      "state": "OPEN",
+      "author": "mguetschow",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "[Section 2.6](https://www.ietf.org/archive/id/draft-ietf-cbor-cddl-modules-01.html#name-import) states that \r\n\r\n> The import statement can also request an alias for an imported name\r\n\r\ngiving the following example\r\n```\r\n$ cddlc -2tcddl -\r\nmydata = {Fritz: cose.empty_or_serialized_map}\r\n;# import empty_or_serialized_map from rfc9052 as cose\r\n```\r\n\r\nFirst of all, I would suggest changing the `mydata` definition to actually use that alias instead of the namespaced version.\r\n\r\nBut it is also not completely clear to me how this alias definition is supposed to work - does it barely mean that for a given name, an additional rule is added without namespace (and the name needs to match the name in the imported module)? If so, the wording is a bit confusing to me.\r\n\r\nReading the sentence above, I would have expected syntax along the lines of\r\n```\r\n;# import empty_or_serialized_map as my_map from rfc9052 as cose\r\n```\r\nwhich would define `my_map` (without namespace) as an alias for `cose.empty_or_serialized_map`.",
+      "createdAt": "2024-02-27T09:20:49Z",
+      "updatedAt": "2024-03-11T13:44:54Z",
+      "closedAt": null,
+      "comments": [
+        {
+          "author": "cabo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "Right.  The only \"automatic\" alias you can get is the one for \"unpacking\" single items from an import that uses a namespace that the imports are otherwise mapped into:\r\n\r\n```\r\n;# import empty_or_serialized_map from rfc9052 as cose\r\n```\r\n\u2794 \r\n```\r\n;# import cose.empty_or_serialized_map from rfc9052 as cose\r\nempty_or_serialized_map = cose.empty_or_serialized_map\r\n```\r\n\r\nFor any other alias, you need to add your own rule\r\n\r\n```\r\n;# import cose.empty_or_serialized_map from rfc9052 as cose\r\nmy_map = cose.empty_or_serialized_map\r\n```\r\n\r\nWe could add syntax to allow creating these, or we could let the spec writer simply write that additional rule.\r\n",
+          "createdAt": "2024-03-09T10:23:43Z",
+          "updatedAt": "2024-03-09T10:23:43Z"
+        },
+        {
+          "author": "mguetschow",
+          "authorAssociation": "NONE",
+          "body": "> We could add syntax to allow creating these, or we could let the spec writer simply write that additional rule.\r\n\r\nSince adding the alias yourself is that easy, I would rather not complicate the syntax further for this. On the contrary, I would actually reconsider having the \"automatic\" alias as well, with the same argument.\r\n\r\nGetting rid of the automatic alias would also allow for simplified syntax for namespaced includes/imports as in:\r\n\r\n```\r\n;# include label, values from rfc9052 as cose\r\n```\r\n\r\ninstead of repeating the namespace name verbally for every rule:\r\n\r\n```\r\n;# include cose.label, cose.values from rfc9052 as cose\r\n```\r\n\r\nThat way, the only difference between including/importing a module with or without namespacing is the `as <namespace>`.\r\n\r\nAs mentioned above, the different semantics for include/import, with/without explicit rule selection and with/without namespaces got me slightly confused and I think dropping the automatic alias feature and unifying explicit rule selection would ease understanding.\r\n\r\nOr is there any good reason why this kind of automatic alias creation is especially useful / used that much that it justifies the added complexity?",
+          "createdAt": "2024-03-11T13:22:44Z",
+          "updatedAt": "2024-03-11T13:22:44Z"
+        },
+        {
+          "author": "cabo",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "The reason I proposed it this way was:\r\n\r\n(1) You usually want to use the alias, so this is a labor-saving device (less added typing when you don\u2019t need the alias and would get it without adding `cose.` than when you need it and wouldn\u2019t get is without adding `label = cose.label` on a line of its own\r\n\r\n(2) In this way, there is a uniformity that everything between `import` and `from` are going to be names are actually are added to the importing module.\r\n\r\nGr\u00fc\u00dfe, Carsten\r\n\r\n",
+          "createdAt": "2024-03-11T13:44:53Z",
+          "updatedAt": "2024-03-11T13:44:53Z"
+        }
+      ]
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOJH_9pM5mPOVy",
+      "title": "More text about security considerations arising from composition",
+      "url": "https://github.com/cbor-wg/cddl-modules/pull/1",
+      "state": "MERGED",
+      "author": "cabo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": ".. including supply-chain attacks and over-reliance on model-based input validation.",
+      "createdAt": "2024-02-07T09:29:41Z",
+      "updatedAt": "2024-02-19T12:45:42Z",
+      "baseRepository": "cbor-wg/cddl-modules",
+      "baseRefName": "main",
+      "baseRefOid": "14aaa5bb2c15f1db1835ae46281ecf5cf77b3b38",
+      "headRepository": "cbor-wg/cddl-modules",
+      "headRefName": "seccons",
+      "headRefOid": "ec04956f6339e95aefcd2fe56ba0ebe207dbe2ec",
+      "closedAt": "2024-02-19T12:45:42Z",
+      "mergedAt": "2024-02-19T12:45:41Z",
+      "mergedBy": "cabo",
+      "mergeCommit": {
+        "oid": "9e409c8ff8bd9f418ce616d8665ce6925a836be7"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJH_9pM5vT_gD",
+          "commit": {
+            "abbreviatedOid": "ec04956"
+          },
+          "author": "bremoran",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2024-02-07T10:55:50Z",
+          "updatedAt": "2024-02-07T10:55:50Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "id": "PR_kwDOJH_9pM5n0SKh",
+      "title": "Editorial pass",
+      "url": "https://github.com/cbor-wg/cddl-modules/pull/2",
+      "state": "MERGED",
+      "author": "cabo",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2024-02-24T10:12:09Z",
+      "updatedAt": "2024-03-04T22:20:41Z",
+      "baseRepository": "cbor-wg/cddl-modules",
+      "baseRefName": "main",
+      "baseRefOid": "9e409c8ff8bd9f418ce616d8665ce6925a836be7",
+      "headRepository": "cbor-wg/cddl-modules",
+      "headRefName": "editorial-pass",
+      "headRefOid": "d54d185c4a2b6f435d13c343156c236ca351cdbf",
+      "closedAt": "2024-03-04T22:20:41Z",
+      "mergedAt": "2024-03-04T22:20:41Z",
+      "mergedBy": "cabo",
+      "mergeCommit": {
+        "oid": "c8d973f20bea33f83111cd0edd7bb5066cbbd7ee"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJH_9pM5yKS4Z",
+          "commit": {
+            "abbreviatedOid": "d54d185"
+          },
+          "author": "bremoran",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "I believe that this draft addresses all my concerns, though my rather philosophical comments still stand (and probably always will).",
+          "createdAt": "2024-03-04T20:43:38Z",
+          "updatedAt": "2024-03-04T20:43:38Z",
+          "comments": []
+        }
+      ]
+    }
+  ]
+}
