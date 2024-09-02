@@ -5,8 +5,8 @@
 CBOR Maintenance and Extensions                               C. Bormann
 Internet-Draft                                    Universität Bremen TZI
 Intended status: Standards Track                                B. Moran
-Expires: 10 September 2024                                   Arm Limited
-                                                            9 March 2024
+Expires: 6 March 2025                                        Arm Limited
+                                                        2 September 2024
 
 
                          CDDL Module Structure
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 1]
+Bormann & Moran           Expires 6 March 2025                  [Page 1]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    Internet-Drafts are working documents of the Internet Engineering
@@ -68,7 +68,7 @@ Internet-Draft            CDDL Module Structure               March 2024
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 10 September 2024.
+   This Internet-Draft will expire on 6 March 2025.
 
 Copyright Notice
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 2]
+Bormann & Moran           Expires 6 March 2025                  [Page 2]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
@@ -165,9 +165,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 3]
+Bormann & Moran           Expires 6 March 2025                  [Page 3]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    CDDL as documented in [RFC8610] (_basic CDDL_) has been designed with
@@ -221,9 +221,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 4]
+Bormann & Moran           Expires 6 March 2025                  [Page 4]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
 2.3.  "Directives", the "module"
@@ -277,9 +277,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 5]
+Bormann & Moran           Expires 6 March 2025                  [Page 5]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    In the examples that follow, a cddlc command line will be shown
@@ -333,9 +333,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 6]
+Bormann & Moran           Expires 6 March 2025                  [Page 6]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    $ cddlc -2tcddl -
@@ -363,7 +363,8 @@ Internet-Draft            CDDL Module Structure               March 2024
 2.6.  Explicit selection of names
 
    Both import and include directives can be augmented by an explicit
-   mentioning of rule names (clause ending in "from").
+   mentioning of rule names (clause ending in "from") or a wild-card "*"
+   for all rules.
 
 include
 
@@ -388,10 +389,9 @@ include
 
 
 
-
-Bormann & Moran         Expires 10 September 2024               [Page 7]
+Bormann & Moran           Expires 6 March 2025                  [Page 7]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    Again, only exactly the rules mentioned are included:
@@ -445,9 +445,9 @@ import
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 8]
+Bormann & Moran           Expires 6 March 2025                  [Page 8]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    =============== NOTE: '\' line wrapping per RFC 8792 ================
@@ -501,9 +501,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024               [Page 9]
+Bormann & Moran           Expires 6 March 2025                  [Page 9]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    $.start.$ = cose.COSE_Key
@@ -557,9 +557,9 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024              [Page 10]
+Bormann & Moran           Expires 6 March 2025                 [Page 10]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
 4.  IANA Considerations
@@ -613,38 +613,38 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024              [Page 11]
+Bormann & Moran           Expires 6 March 2025                 [Page 11]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    [I-D.bormann-cbor-cddl-2-draft]
               Bormann, C., "CDDL 2.0 and beyond -- a draft plan", Work
               in Progress, Internet-Draft, draft-bormann-cbor-cddl-2-
-              draft-04, 27 February 2024,
+              draft-05, 27 August 2024,
               <https://datatracker.ietf.org/doc/html/draft-bormann-cbor-
-              cddl-2-draft-04>.
+              cddl-2-draft-05>.
 
    [I-D.bormann-t2trg-deref-id]
               Bormann, C. and C. Amsüss, "The "dereferenceable
               identifier" pattern", Work in Progress, Internet-Draft,
-              draft-bormann-t2trg-deref-id-03, 2 March 2024,
+              draft-bormann-t2trg-deref-id-04, 1 September 2024,
               <https://datatracker.ietf.org/doc/html/draft-bormann-
-              t2trg-deref-id-03>.
+              t2trg-deref-id-04>.
 
    [I-D.ietf-cbor-cddl-more-control]
               Bormann, C., "More Control Operators for CDDL", Work in
               Progress, Internet-Draft, draft-ietf-cbor-cddl-more-
-              control-03, 26 February 2024,
+              control-06, 21 July 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
-              cddl-more-control-03>.
+              cddl-more-control-06>.
 
    [I-D.ietf-cbor-update-8610-grammar]
               Bormann, C., "Updates to the CDDL grammar of RFC 8610",
               Work in Progress, Internet-Draft, draft-ietf-cbor-update-
-              8610-grammar-04, 2 March 2024,
+              8610-grammar-06, 24 June 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
-              update-8610-grammar-04>.
+              update-8610-grammar-06>.
 
    [RFC8428]  Jennings, C., Shelby, Z., Arkko, J., Keranen, A., and C.
               Bormann, "Sensor Measurement Lists (SenML)", RFC 8428,
@@ -669,18 +669,19 @@ Appendix A.  ABNF Specification
 
 
 
-Bormann & Moran         Expires 10 September 2024              [Page 12]
+Bormann & Moran           Expires 6 March 2025                 [Page 12]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
                        filename [as-clause] CRLF
-   from-clause = 1*(id [","] RS) %s"from" RS
+   from-clause = 1*(id-or-all [","] RS) %s"from" RS
    as-clause = RS %s"as" RS id
    filename = 1*("-" / "." / %x30-39 / %x41-5a / "_" / %x61-7a)
    id = ("$" / %x40-5a / "_" / %x61-7a)
         *("$" / %x30-39 / %x40-5a / "_" / %x61-7a)
+   id-or-all = id / "*"
    RS = 1*WS
    WS = SP
    SP = %x20
@@ -724,10 +725,9 @@ Authors' Addresses
 
 
 
-
-Bormann & Moran         Expires 10 September 2024              [Page 13]
+Bormann & Moran           Expires 6 March 2025                 [Page 13]
 
-Internet-Draft            CDDL Module Structure               March 2024
+Internet-Draft            CDDL Module Structure           September 2024
 
 
    Brendan Moran
@@ -781,4 +781,4 @@ Internet-Draft            CDDL Module Structure               March 2024
 
 
 
-Bormann & Moran         Expires 10 September 2024              [Page 14]
+Bormann & Moran           Expires 6 March 2025                 [Page 14]
