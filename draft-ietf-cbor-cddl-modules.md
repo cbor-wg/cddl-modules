@@ -255,7 +255,8 @@ Explicit selection of names
 ---------------------------
 
 Both `import` and `include` directives can be augmented by an explicit
-mentioning of rule names (clause ending in "from").
+mentioning of rule names (clause ending in "from") or a wild-card
+"`*`" for all rules.
 
 ### `include`
 {:unnumbered}
@@ -345,11 +346,12 @@ directives using the ABNF language defined in {{-abnf}} and
 ~~~ abnf
 directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
                     filename [as-clause] CRLF
-from-clause = 1*(id [","] RS) %s"from" RS
+from-clause = 1*(id-or-all [","] RS) %s"from" RS
 as-clause = RS %s"as" RS id
 filename = 1*("-" / "." / %x30-39 / %x41-5a / "_" / %x61-7a)
 id = ("$" / %x40-5a / "_" / %x61-7a)
      *("$" / %x30-39 / %x40-5a / "_" / %x61-7a)
+id-or-all = id / "*"
 RS = 1*WS
 WS = SP
 SP = %x20
