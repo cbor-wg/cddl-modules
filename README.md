@@ -1,6 +1,6 @@
 # CDDL Module Structure
 
-This is the working area for the IETF [CBOR Working Group](https://datatracker.ietf.org/wg/cbor/documents/) Internet-Draft, "CDDL Module Structure".
+This is the working area for the IETF [CBOR Working Group](https://datatracker.ietf.org/group/cbor/documents/) Internet-Draft, "CDDL Module Structure".
 
 * [Editor's Copy](https://cbor-wg.github.io/cddl-modules/#go.draft-ietf-cbor-cddl-modules.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-cbor-cddl-modules)
