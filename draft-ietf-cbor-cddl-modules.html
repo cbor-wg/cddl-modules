@@ -10,7 +10,7 @@
 <meta content="
        At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9165.
+RFC 8610 and RFC 9682 as well as RFC 9165.
 The latter has used the extension point provided in RFC 8610,
 the  control operator . 
        As CDDL is being used in larger projects, the need for
@@ -1095,7 +1095,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9165.
+RFC 8610 and RFC 9682 as well as RFC 9165.
 The latter has used the extension point provided in RFC 8610,
 the <em>control operator</em>.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">As CDDL is being used in larger projects, the need for
@@ -1250,7 +1250,7 @@ way to add a module structure to CDDL.<a href="#section-abstract-3" class="pilcr
       </h2>
 <p id="section-1-1">At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9165.
+RFC 8610 and RFC 9682 as well as RFC 9165.
 The latter has used the extension point provided in RFC 8610,
 the <em>control operator</em>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">As CDDL is being used in larger projects, the need for
@@ -1261,7 +1261,7 @@ way to add a module structure to CDDL.<a href="#section-1-3" class="pilcrow">¶<
 <p id="section-1-4">The functionality of the present document is considered a core part of
 what has colloquially been called CDDL 2.0, and is intended to be used
 with (and orthogonal to) other recent specifications such as a small
-set of CDDL grammar updates <span>[<a href="#I-D.ietf-cbor-update-8610-grammar" class="cite xref">I-D.ietf-cbor-update-8610-grammar</a>]</span> and an additional exercise of
+set of CDDL grammar updates <span>[<a href="#RFC9682" class="cite xref">RFC9682</a>]</span> and an additional exercise of
 the control operator extension point <span>[<a href="#I-D.ietf-cbor-cddl-more-control" class="cite xref">I-D.ietf-cbor-cddl-more-control</a>]</span> (a follow-up to
 <span>[<a href="#RFC9165" class="cite xref">RFC9165</a>]</span>).<a href="#section-1-4" class="pilcrow">¶</a></p>
 <div id="conventions-and-definitions">
@@ -1273,7 +1273,7 @@ the control operator extension point <span>[<a href="#I-D.ietf-cbor-cddl-more-co
 <p id="section-1.1-2">Some examples use CDDL definitions from <span>[<a href="#RFC9052" class="cite xref">RFC9052</a>]</span>.<a href="#section-1.1-2" class="pilcrow">¶</a></p>
 <p id="section-1.1-3">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
-described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
+described in <span>[<a href="#BCP14" class="cite xref">BCP14</a>]</span> (<a href="#RFC2119" class="auto internal xref">RFC2119</a>) (<a href="#RFC8174" class="auto internal xref">RFC8174</a>) when, and only when, they
 appear in all capitals, as shown here.<a href="#section-1.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -1714,17 +1714,19 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
 <a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
-<dt id="RFC2119">[RFC2119]</dt>
+<dt id="BCP14">[BCP14]</dt>
         <dd>
-<span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
+<div class="refInstance">Best Current Practice 14, <span>&lt;<a href="https://www.rfc-editor.org/info/bcp14">https://www.rfc-editor.org/info/bcp14</a>&gt;</span>.<br><span>At the time of writing, this BCP comprises the following:</span>
+</div>
+<div class="refInstance" id="RFC2119">
+            <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc2119">https://www.rfc-editor.org/info/rfc2119</a>&gt;</span>. </div>
+<div class="refInstance" id="RFC8174">
+            <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/info/rfc8174">https://www.rfc-editor.org/info/rfc8174</a>&gt;</span>. </div>
+</dd>
 <dd class="break"></dd>
 <dt id="RFC7405">[RFC7405]</dt>
         <dd>
 <span class="refAuthor">Kyzivat, P.</span>, <span class="refTitle">"Case-Sensitive String Support in ABNF"</span>, <span class="seriesInfo">RFC 7405</span>, <span class="seriesInfo">DOI 10.17487/RFC7405</span>, <time datetime="2014-12" class="refDate">December 2014</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc7405">https://www.rfc-editor.org/rfc/rfc7405</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC8174">[RFC8174]</dt>
-        <dd>
-<span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8610">[RFC8610]</dt>
         <dd>
@@ -1767,10 +1769,6 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Concise Data Definition Language (CDDL): Additional Control Operators for the Conversion and Processing of Text"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cbor-cddl-more-control-08</span>, <time datetime="2025-01-09" class="refDate">9 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-more-control-08">https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-more-control-08</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="I-D.ietf-cbor-update-8610-grammar">[I-D.ietf-cbor-update-8610-grammar]</dt>
-        <dd>
-<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Updates to the CDDL grammar of RFC 8610"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cbor-update-8610-grammar-06</span>, <time datetime="2024-06-24" class="refDate">24 June 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cbor-update-8610-grammar-06">https://datatracker.ietf.org/doc/html/draft-ietf-cbor-update-8610-grammar-06</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="RFC8428">[RFC8428]</dt>
         <dd>
 <span class="refAuthor">Jennings, C.</span>, <span class="refAuthor">Shelby, Z.</span>, <span class="refAuthor">Arkko, J.</span>, <span class="refAuthor">Keranen, A.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Sensor Measurement Lists (SenML)"</span>, <span class="seriesInfo">RFC 8428</span>, <span class="seriesInfo">DOI 10.17487/RFC8428</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8428">https://www.rfc-editor.org/rfc/rfc8428</a>&gt;</span>. </dd>
@@ -1778,6 +1776,10 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
 <dt id="RFC9052">[RFC9052]</dt>
         <dd>
 <span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"CBOR Object Signing and Encryption (COSE): Structures and Process"</span>, <span class="seriesInfo">STD 96</span>, <span class="seriesInfo">RFC 9052</span>, <span class="seriesInfo">DOI 10.17487/RFC9052</span>, <time datetime="2022-08" class="refDate">August 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9052">https://www.rfc-editor.org/rfc/rfc9052</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9682">[RFC9682]</dt>
+        <dd>
+<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Updates to the Concise Data Definition Language (CDDL) Grammar"</span>, <span class="seriesInfo">RFC 9682</span>, <span class="seriesInfo">DOI 10.17487/RFC9682</span>, <time datetime="2024-11" class="refDate">November 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9682">https://www.rfc-editor.org/rfc/rfc9682</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="useful">[useful]</dt>
       <dd>

@@ -15,8 +15,9 @@ Expires: 4 September 2025                                    Arm Limited
 Abstract
 
    At the time of writing, the Concise Data Definition Language (CDDL)
-   is defined by RFC 8610 and RFC 9165.  The latter has used the
-   extension point provided in RFC 8610, the _control operator_.
+   is defined by RFC 8610 and RFC 9682 as well as RFC 9165.  The latter
+   has used the extension point provided in RFC 8610, the _control
+   operator_.
 
    As CDDL is being used in larger projects, the need for features has
    become known that cannot be easily mapped into this single extension
@@ -46,7 +47,6 @@ Status of This Memo
 
    This Internet-Draft is submitted in full conformance with the
    provisions of BCP 78 and BCP 79.
-
 
 
 
@@ -119,8 +119,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 1.  Introduction
 
    At the time of writing, the Concise Data Definition Language (CDDL)
-   is defined by RFC 8610 and RFC 9165.  The latter has used the
-   extension point provided in RFC 8610, the _control operator_.
+   is defined by RFC 8610 and RFC 9682 as well as RFC 9165.  The latter
+   has used the extension point provided in RFC 8610, the _control
+   operator_.
 
    As CDDL is being used in larger projects, the need for features has
    become known that cannot be easily mapped into this single extension
@@ -132,8 +133,8 @@ Internet-Draft            CDDL Module Structure               March 2025
    The functionality of the present document is considered a core part
    of what has colloquially been called CDDL 2.0, and is intended to be
    used with (and orthogonal to) other recent specifications such as a
-   small set of CDDL grammar updates [I-D.ietf-cbor-update-8610-grammar]
-   and an additional exercise of the control operator extension point
+   small set of CDDL grammar updates [RFC9682] and an additional
+   exercise of the control operator extension point
    [I-D.ietf-cbor-cddl-more-control] (a follow-up to [RFC9165]).
 
 1.1.  Conventions and Definitions
@@ -145,7 +146,7 @@ Internet-Draft            CDDL Module Structure               March 2025
    The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
    "OPTIONAL" in this document are to be interpreted as described in
-   BCP 14 [RFC2119] [RFC8174] when, and only when, they appear in all
+   [BCP14] (RFC2119) (RFC8174) when, and only when, they appear in all
    capitals, as shown here.
 
 2.  Module superstructure
@@ -156,7 +157,6 @@ Internet-Draft            CDDL Module Structure               March 2025
    expressed in a few lines.  As the size of data models that need to be
    expressed in CDDL has increased, the need to modularize and re-use
    components is increasing.
-
 
 
 
@@ -570,18 +570,22 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 5.1.  Normative References
 
-   [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
+   [BCP14]    Best Current Practice 14,
+              <https://www.rfc-editor.org/info/bcp14>.
+              At the time of writing, this BCP comprises the following:
+
+              Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
-              <https://www.rfc-editor.org/rfc/rfc2119>.
+              <https://www.rfc-editor.org/info/rfc2119>.
+
+              Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+              May 2017, <https://www.rfc-editor.org/info/rfc8174>.
 
    [RFC7405]  Kyzivat, P., "Case-Sensitive String Support in ABNF",
               RFC 7405, DOI 10.17487/RFC7405, December 2014,
               <https://www.rfc-editor.org/rfc/rfc7405>.
-
-   [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
-              2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
-              May 2017, <https://www.rfc-editor.org/rfc/rfc8174>.
 
    [RFC8610]  Birkholz, H., Vigano, C., and C. Bormann, "Concise Data
               Definition Language (CDDL): A Notational Convention to
@@ -605,10 +609,6 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 5.2.  Informative References
 
-   [cddlc]    "CDDL conversion utilities", n.d.,
-              <https://github.com/cabo/cddlc>.
-
-
 
 
 
@@ -617,6 +617,9 @@ Bormann & Moran         Expires 4 September 2025               [Page 11]
 
 Internet-Draft            CDDL Module Structure               March 2025
 
+
+   [cddlc]    "CDDL conversion utilities", n.d.,
+              <https://github.com/cabo/cddlc>.
 
    [I-D.bormann-cbor-cddl-2-draft]
               Bormann, C., "CDDL 2.0 and beyond -- a draft plan", Work
@@ -640,13 +643,6 @@ Internet-Draft            CDDL Module Structure               March 2025
               <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
               cddl-more-control-08>.
 
-   [I-D.ietf-cbor-update-8610-grammar]
-              Bormann, C., "Updates to the CDDL grammar of RFC 8610",
-              Work in Progress, Internet-Draft, draft-ietf-cbor-update-
-              8610-grammar-06, 24 June 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
-              update-8610-grammar-06>.
-
    [RFC8428]  Jennings, C., Shelby, Z., Arkko, J., Keranen, A., and C.
               Bormann, "Sensor Measurement Lists (SenML)", RFC 8428,
               DOI 10.17487/RFC8428, August 2018,
@@ -656,6 +652,10 @@ Internet-Draft            CDDL Module Structure               March 2025
               Structures and Process", STD 96, RFC 9052,
               DOI 10.17487/RFC9052, August 2022,
               <https://www.rfc-editor.org/rfc/rfc9052>.
+
+   [RFC9682]  Bormann, C., "Updates to the Concise Data Definition
+              Language (CDDL) Grammar", RFC 9682, DOI 10.17487/RFC9682,
+              November 2024, <https://www.rfc-editor.org/rfc/rfc9682>.
 
    [useful]   "Useful CDDL", n.d.,
               <https://github.com/cbor-wg/cddl/wiki/Useful-CDDL>.
