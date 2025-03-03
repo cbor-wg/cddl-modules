@@ -44,7 +44,7 @@ normative:
 
 informative:
 #  I-D.draft-bormann-cbor-cddl-freezer: freezer
-  I-D.ietf-cbor-update-8610-grammar: grammar
+  RFC9682: grammar
   I-D.ietf-cbor-cddl-more-control: control2
   I-D.bormann-cbor-cddl-2-draft: cddl-2-draft
   I-D.bormann-t2trg-deref-id: deref
@@ -63,7 +63,7 @@ informative:
 [^abs1-]:
     At the time of writing,
     the Concise Data Definition Language (CDDL) is defined by
-    RFC 8610 and RFC 9165.
+    RFC 8610 and RFC 9682 as well as RFC 9165.
     The latter has used the extension point provided in RFC 8610,
     the _control operator_.
 
@@ -93,7 +93,7 @@ The Terminology from {{-cddl}} applies.
 
 Some examples use CDDL definitions from {{-cose}}.
 
-{::boilerplate bcp14-tagged}
+{::boilerplate bcp14-tagged-bcp14}
 
 
 Module superstructure
