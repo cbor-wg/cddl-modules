@@ -7,6 +7,7 @@ This is the working area for the IETF [CBOR Working Group](https://datatracker.i
 * [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-modules)
 * [Compare Editor's Copy to Working Group Draft](https://cbor-wg.github.io/cddl-modules/#go.draft-ietf-cbor-cddl-modules.diff)
 
+[Access to all branches](https://cbor-wg.github.io/cddl-modules/)
 
 ## Contributing
 
