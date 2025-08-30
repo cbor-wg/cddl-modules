@@ -10,8 +10,8 @@
 <meta content="
        At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9682 as well as RFC 9165.
-The latter has used the extension point provided in RFC 8610,
+RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+The latter two have used the extension point provided in RFC 8610,
 the  control operator . 
        As CDDL is being used in larger projects, the need for
 features has become known that cannot be easily
@@ -19,22 +19,22 @@ mapped into this single extension point.
        The present document defines a backward- and forward-compatible
 way to add a module structure to CDDL. 
     " name="description">
-<meta content="xml2rfc 3.28.0" name="generator">
+<meta content="xml2rfc 3.30.0" name="generator">
 <meta content="Concise Data Definition Language" name="keyword">
 <meta content="draft-ietf-cbor-cddl-modules-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.28.0
-    Python 3.12.9
+  xml2rfc 3.30.0
+    Python 3.12.11
     ConfigArgParse 1.7
     google-i18n-address 3.1.1
     intervaltree 3.1.0
-    Jinja2 3.1.5
-    lxml 5.3.0
-    platformdirs 4.3.6
+    Jinja2 3.1.6
+    lxml 5.3.1
+    platformdirs 4.3.8
     pycountry 24.6.1
     PyYAML 6.0.2
-    requests 2.32.3
-    setuptools 70.3.0
+    requests 2.32.4
+    setuptools 80.9.0
     wcwidth 0.2.13
 -->
 <link href="draft-ietf-cbor-cddl-modules.xml" rel="alternate" type="application/rfc+xml">
@@ -1054,11 +1054,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">CDDL Module Structure</td>
-<td class="right">March 2025</td>
+<td class="right">August 2025</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Bormann &amp; Moran</td>
-<td class="center">Expires 4 September 2025</td>
+<td class="center">Expires 3 March 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1071,12 +1071,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ietf-cbor-cddl-modules-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-03-03" class="published">3 March 2025</time>
+<time datetime="2025-08-30" class="published">30 August 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2025-09-04">4 September 2025</time></dd>
+<dd class="expires"><time datetime="2026-03-03">3 March 2026</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1095,8 +1095,8 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
 <p id="section-abstract-1">At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9682 as well as RFC 9165.
-The latter has used the extension point provided in RFC 8610,
+RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+The latter two have used the extension point provided in RFC 8610,
 the <em>control operator</em>.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 <p id="section-abstract-2">As CDDL is being used in larger projects, the need for
 features has become known that cannot be easily
@@ -1139,7 +1139,7 @@ way to add a module structure to CDDL.<a href="#section-abstract-3" class="pilcr
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 4 September 2025.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 3 March 2026.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1250,8 +1250,8 @@ way to add a module structure to CDDL.<a href="#section-abstract-3" class="pilcr
       </h2>
 <p id="section-1-1">At the time of writing,
 the Concise Data Definition Language (CDDL) is defined by
-RFC 8610 and RFC 9682 as well as RFC 9165.
-The latter has used the extension point provided in RFC 8610,
+RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+The latter two have used the extension point provided in RFC 8610,
 the <em>control operator</em>.<a href="#section-1-1" class="pilcrow">¶</a></p>
 <p id="section-1-2">As CDDL is being used in larger projects, the need for
 features has become known that cannot be easily
@@ -1262,7 +1262,7 @@ way to add a module structure to CDDL.<a href="#section-1-3" class="pilcrow">¶<
 what has colloquially been called CDDL 2.0, and is intended to be used
 with (and orthogonal to) other recent specifications such as a small
 set of CDDL grammar updates <span>[<a href="#RFC9682" class="cite xref">RFC9682</a>]</span> and an additional exercise of
-the control operator extension point <span>[<a href="#I-D.ietf-cbor-cddl-more-control" class="cite xref">I-D.ietf-cbor-cddl-more-control</a>]</span> (a follow-up to
+the control operator extension point <span>[<a href="#RFC9741" class="cite xref">RFC9741</a>]</span> (a follow-up to
 <span>[<a href="#RFC9165" class="cite xref">RFC9165</a>]</span>).<a href="#section-1-4" class="pilcrow">¶</a></p>
 <div id="conventions-and-definitions">
 <section id="section-1.1">
@@ -1313,7 +1313,7 @@ unambiguous referencing into evolving specifications ("versioning")
 and selection of alternatives (as was emulated with snippets in
 <span><a href="https://rfc-editor.org/rfc/rfc8428#section-11" class="relref">Section 11</a> of [<a href="#RFC8428" class="cite xref">RFC8428</a>]</span>.  Note that one approach for expressing
 variants is demonstrated in <span>[<a href="#useful" class="cite xref">useful</a>]</span> based on <span><a href="https://rfc-editor.org/rfc/rfc9165#section-4" class="relref">Section 4</a> of [<a href="#RFC9165" class="cite xref">RFC9165</a>]</span>).
-Potential further work is outlined in Sections <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-06#section-4" class="relref">4</a> and <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-06#appendix-A.2" class="relref">A.2</a> of <span>[<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
+Potential further work is outlined in Sections <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-07#section-4" class="relref">4</a> and <a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-07#appendix-A.2" class="relref">A.2</a> of <span>[<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span>.<a href="#section-2-5" class="pilcrow">¶</a></p>
 <div id="compatibility">
 <section id="section-2.1">
         <h3 id="name-compatibility">
@@ -1390,7 +1390,7 @@ This collection contains fragments of extracted CDDL from published
 RFCs, using names such as <code>rfc9052</code>.<a href="#section-2.4-3" class="pilcrow">¶</a></p>
 <p id="section-2.4-4">(Future versions might augment this with Web extractors and/or ways to
 extract CDDL modules from sites such as github and from Internet-Drafts; see
-<span><a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-06#appendix-A.2" class="relref">Appendix A.2</a> of [<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span> for some design considerations.)<a href="#section-2.4-4" class="pilcrow">¶</a></p>
+<span><a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-07#appendix-A.2" class="relref">Appendix A.2</a> of [<a href="#I-D.bormann-cbor-cddl-2-draft" class="cite xref">I-D.bormann-cbor-cddl-2-draft</a>]</span> for some design considerations.)<a href="#section-2.4-4" class="pilcrow">¶</a></p>
 <p id="section-2.4-5">The default <code>CDDL_INCLUDE_PATH</code> is:<a href="#section-2.4-5" class="pilcrow">¶</a></p>
 <div class="alignLeft art-text artwork" id="section-2.4-6">
 <pre>
@@ -1732,10 +1732,6 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Birkholz, H.</span>, <span class="refAuthor">Vigano, C.</span>, and <span class="refAuthor">C. Bormann</span>, <span class="refTitle">"Concise Data Definition Language (CDDL): A Notational Convention to Express Concise Binary Object Representation (CBOR) and JSON Data Structures"</span>, <span class="seriesInfo">RFC 8610</span>, <span class="seriesInfo">DOI 10.17487/RFC8610</span>, <time datetime="2019-06" class="refDate">June 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8610">https://www.rfc-editor.org/rfc/rfc8610</a>&gt;</span>. </dd>
 <dd class="break"></dd>
-<dt id="RFC9165">[RFC9165]</dt>
-        <dd>
-<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Additional Control Operators for the Concise Data Definition Language (CDDL)"</span>, <span class="seriesInfo">RFC 9165</span>, <span class="seriesInfo">DOI 10.17487/RFC9165</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9165">https://www.rfc-editor.org/rfc/rfc9165</a>&gt;</span>. </dd>
-<dd class="break"></dd>
 <dt id="STD68">[STD68]</dt>
       <dd>
 <div class="refInstance">Internet Standard 68, <span>&lt;<a href="https://www.rfc-editor.org/info/std68">https://www.rfc-editor.org/info/std68</a>&gt;</span>.<br><span>At the time of writing, this STD comprises the following:</span>
@@ -1759,15 +1755,11 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
 <dd class="break"></dd>
 <dt id="I-D.bormann-cbor-cddl-2-draft">[I-D.bormann-cbor-cddl-2-draft]</dt>
         <dd>
-<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"CDDL 2.0 and beyond -- a draft plan"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-cbor-cddl-2-draft-06</span>, <time datetime="2025-02-28" class="refDate">28 February 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-06">https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-06</a>&gt;</span>. </dd>
+<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"CDDL 2.0 and beyond -- a draft plan"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-cbor-cddl-2-draft-07</span>, <time datetime="2025-08-30" class="refDate">30 August 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-07">https://datatracker.ietf.org/doc/html/draft-bormann-cbor-cddl-2-draft-07</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="I-D.bormann-t2trg-deref-id">[I-D.bormann-t2trg-deref-id]</dt>
         <dd>
-<span class="refAuthor">Bormann, C.</span> and <span class="refAuthor">C. Amsüss</span>, <span class="refTitle">"The "dereferenceable identifier" pattern"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-t2trg-deref-id-05</span>, <time datetime="2025-03-03" class="refDate">3 March 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-t2trg-deref-id-05">https://datatracker.ietf.org/doc/html/draft-bormann-t2trg-deref-id-05</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="I-D.ietf-cbor-cddl-more-control">[I-D.ietf-cbor-cddl-more-control]</dt>
-        <dd>
-<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Concise Data Definition Language (CDDL): Additional Control Operators for the Conversion and Processing of Text"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-cbor-cddl-more-control-08</span>, <time datetime="2025-01-09" class="refDate">9 January 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-more-control-08">https://datatracker.ietf.org/doc/html/draft-ietf-cbor-cddl-more-control-08</a>&gt;</span>. </dd>
+<span class="refAuthor">Bormann, C.</span> and <span class="refAuthor">C. Amsüss</span>, <span class="refTitle">"The "dereferenceable identifier" pattern"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-bormann-t2trg-deref-id-06</span>, <time datetime="2025-08-30" class="refDate">30 August 2025</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-bormann-t2trg-deref-id-06">https://datatracker.ietf.org/doc/html/draft-bormann-t2trg-deref-id-06</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8428">[RFC8428]</dt>
         <dd>
@@ -1777,9 +1769,17 @@ dereferenceable identifiers).<a href="#section-3-4" class="pilcrow">¶</a></p>
         <dd>
 <span class="refAuthor">Schaad, J.</span>, <span class="refTitle">"CBOR Object Signing and Encryption (COSE): Structures and Process"</span>, <span class="seriesInfo">STD 96</span>, <span class="seriesInfo">RFC 9052</span>, <span class="seriesInfo">DOI 10.17487/RFC9052</span>, <time datetime="2022-08" class="refDate">August 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9052">https://www.rfc-editor.org/rfc/rfc9052</a>&gt;</span>. </dd>
 <dd class="break"></dd>
+<dt id="RFC9165">[RFC9165]</dt>
+        <dd>
+<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Additional Control Operators for the Concise Data Definition Language (CDDL)"</span>, <span class="seriesInfo">RFC 9165</span>, <span class="seriesInfo">DOI 10.17487/RFC9165</span>, <time datetime="2021-12" class="refDate">December 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9165">https://www.rfc-editor.org/rfc/rfc9165</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC9682">[RFC9682]</dt>
         <dd>
 <span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Updates to the Concise Data Definition Language (CDDL) Grammar"</span>, <span class="seriesInfo">RFC 9682</span>, <span class="seriesInfo">DOI 10.17487/RFC9682</span>, <time datetime="2024-11" class="refDate">November 2024</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9682">https://www.rfc-editor.org/rfc/rfc9682</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9741">[RFC9741]</dt>
+        <dd>
+<span class="refAuthor">Bormann, C.</span>, <span class="refTitle">"Concise Data Definition Language (CDDL): Additional Control Operators for the Conversion and Processing of Text"</span>, <span class="seriesInfo">RFC 9741</span>, <span class="seriesInfo">DOI 10.17487/RFC9741</span>, <time datetime="2025-03" class="refDate">March 2025</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9741">https://www.rfc-editor.org/rfc/rfc9741</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="useful">[useful]</dt>
       <dd>

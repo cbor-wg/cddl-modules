@@ -5,8 +5,8 @@
 CBOR Maintenance and Extensions                               C. Bormann
 Internet-Draft                                    Universität Bremen TZI
 Intended status: Standards Track                                B. Moran
-Expires: 4 September 2025                                    Arm Limited
-                                                            3 March 2025
+Expires: 3 March 2026                                        Arm Limited
+                                                          30 August 2025
 
 
                          CDDL Module Structure
@@ -15,9 +15,9 @@ Expires: 4 September 2025                                    Arm Limited
 Abstract
 
    At the time of writing, the Concise Data Definition Language (CDDL)
-   is defined by RFC 8610 and RFC 9682 as well as RFC 9165.  The latter
-   has used the extension point provided in RFC 8610, the _control
-   operator_.
+   is defined by RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+   The latter two have used the extension point provided in RFC 8610,
+   the _control operator_.
 
    As CDDL is being used in larger projects, the need for features has
    become known that cannot be easily mapped into this single extension
@@ -53,9 +53,9 @@ Status of This Memo
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 1]
+Bormann & Moran           Expires 3 March 2026                  [Page 1]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    Internet-Drafts are working documents of the Internet Engineering
@@ -68,7 +68,7 @@ Internet-Draft            CDDL Module Structure               March 2025
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 3 March 2026.
 
 Copyright Notice
 
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 2]
+Bormann & Moran           Expires 3 March 2026                  [Page 2]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
@@ -119,9 +119,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 1.  Introduction
 
    At the time of writing, the Concise Data Definition Language (CDDL)
-   is defined by RFC 8610 and RFC 9682 as well as RFC 9165.  The latter
-   has used the extension point provided in RFC 8610, the _control
-   operator_.
+   is defined by RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+   The latter two have used the extension point provided in RFC 8610,
+   the _control operator_.
 
    As CDDL is being used in larger projects, the need for features has
    become known that cannot be easily mapped into this single extension
@@ -134,8 +134,8 @@ Internet-Draft            CDDL Module Structure               March 2025
    of what has colloquially been called CDDL 2.0, and is intended to be
    used with (and orthogonal to) other recent specifications such as a
    small set of CDDL grammar updates [RFC9682] and an additional
-   exercise of the control operator extension point
-   [I-D.ietf-cbor-cddl-more-control] (a follow-up to [RFC9165]).
+   exercise of the control operator extension point [RFC9741] (a follow-
+   up to [RFC9165]).
 
 1.1.  Conventions and Definitions
 
@@ -165,9 +165,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 3]
+Bormann & Moran           Expires 3 March 2026                  [Page 3]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    CDDL as documented in [RFC8610] (_basic CDDL_) has been designed with
@@ -221,9 +221,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 4]
+Bormann & Moran           Expires 3 March 2026                  [Page 4]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
 2.3.  "Directives", the "module"
@@ -277,9 +277,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 5]
+Bormann & Moran           Expires 3 March 2026                  [Page 5]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    In the examples that follow, a cddlc command line will be shown
@@ -333,9 +333,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 6]
+Bormann & Moran           Expires 3 March 2026                  [Page 6]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    $ cddlc -2tcddl -
@@ -389,9 +389,9 @@ include
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 7]
+Bormann & Moran           Expires 3 March 2026                  [Page 7]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    Again, only exactly the rules mentioned are included:
@@ -445,9 +445,9 @@ import
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 8]
+Bormann & Moran           Expires 3 March 2026                  [Page 8]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    =============== NOTE: '\' line wrapping per RFC 8792 ================
@@ -501,9 +501,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025                [Page 9]
+Bormann & Moran           Expires 3 March 2026                  [Page 9]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    $.start.$ = cose.COSE_Key
@@ -557,9 +557,9 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025               [Page 10]
+Bormann & Moran           Expires 3 March 2026                 [Page 10]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
 4.  IANA Considerations
@@ -593,11 +593,6 @@ Internet-Draft            CDDL Module Structure               March 2025
               JSON Data Structures", RFC 8610, DOI 10.17487/RFC8610,
               June 2019, <https://www.rfc-editor.org/rfc/rfc8610>.
 
-   [RFC9165]  Bormann, C., "Additional Control Operators for the Concise
-              Data Definition Language (CDDL)", RFC 9165,
-              DOI 10.17487/RFC9165, December 2021,
-              <https://www.rfc-editor.org/rfc/rfc9165>.
-
    [STD68]    Internet Standard 68,
               <https://www.rfc-editor.org/info/std68>.
               At the time of writing, this STD comprises the following:
@@ -609,39 +604,30 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 5.2.  Informative References
 
-
-
-
-
-Bormann & Moran         Expires 4 September 2025               [Page 11]
-
-Internet-Draft            CDDL Module Structure               March 2025
-
-
    [cddlc]    "CDDL conversion utilities", n.d.,
               <https://github.com/cabo/cddlc>.
 
    [I-D.bormann-cbor-cddl-2-draft]
               Bormann, C., "CDDL 2.0 and beyond -- a draft plan", Work
               in Progress, Internet-Draft, draft-bormann-cbor-cddl-2-
-              draft-06, 28 February 2025,
+
+
+
+Bormann & Moran           Expires 3 March 2026                 [Page 11]
+
+Internet-Draft            CDDL Module Structure              August 2025
+
+
+              draft-07, 30 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-bormann-cbor-
-              cddl-2-draft-06>.
+              cddl-2-draft-07>.
 
    [I-D.bormann-t2trg-deref-id]
               Bormann, C. and C. Amsüss, "The "dereferenceable
               identifier" pattern", Work in Progress, Internet-Draft,
-              draft-bormann-t2trg-deref-id-05, 3 March 2025,
+              draft-bormann-t2trg-deref-id-06, 30 August 2025,
               <https://datatracker.ietf.org/doc/html/draft-bormann-
-              t2trg-deref-id-05>.
-
-   [I-D.ietf-cbor-cddl-more-control]
-              Bormann, C., "Concise Data Definition Language (CDDL):
-              Additional Control Operators for the Conversion and
-              Processing of Text", Work in Progress, Internet-Draft,
-              draft-ietf-cbor-cddl-more-control-08, 9 January 2025,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-cbor-
-              cddl-more-control-08>.
+              t2trg-deref-id-06>.
 
    [RFC8428]  Jennings, C., Shelby, Z., Arkko, J., Keranen, A., and C.
               Bormann, "Sensor Measurement Lists (SenML)", RFC 8428,
@@ -653,9 +639,19 @@ Internet-Draft            CDDL Module Structure               March 2025
               DOI 10.17487/RFC9052, August 2022,
               <https://www.rfc-editor.org/rfc/rfc9052>.
 
+   [RFC9165]  Bormann, C., "Additional Control Operators for the Concise
+              Data Definition Language (CDDL)", RFC 9165,
+              DOI 10.17487/RFC9165, December 2021,
+              <https://www.rfc-editor.org/rfc/rfc9165>.
+
    [RFC9682]  Bormann, C., "Updates to the Concise Data Definition
               Language (CDDL) Grammar", RFC 9682, DOI 10.17487/RFC9682,
               November 2024, <https://www.rfc-editor.org/rfc/rfc9682>.
+
+   [RFC9741]  Bormann, C., "Concise Data Definition Language (CDDL):
+              Additional Control Operators for the Conversion and
+              Processing of Text", RFC 9741, DOI 10.17487/RFC9741, March
+              2025, <https://www.rfc-editor.org/rfc/rfc9741>.
 
    [useful]   "Useful CDDL", n.d.,
               <https://github.com/cbor-wg/cddl/wiki/Useful-CDDL>.
@@ -669,9 +665,13 @@ Appendix A.  ABNF Specification
 
 
 
-Bormann & Moran         Expires 4 September 2025               [Page 12]
+
+
+
+
+Bormann & Moran           Expires 3 March 2026                 [Page 12]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    directive = ";#" RS (%s"import" / %s"include") RS [from-clause]
@@ -725,9 +725,9 @@ Authors' Addresses
 
 
 
-Bormann & Moran         Expires 4 September 2025               [Page 13]
+Bormann & Moran           Expires 3 March 2026                 [Page 13]
 
-Internet-Draft            CDDL Module Structure               March 2025
+Internet-Draft            CDDL Module Structure              August 2025
 
 
    Brendan Moran
@@ -781,4 +781,4 @@ Internet-Draft            CDDL Module Structure               March 2025
 
 
 
-Bormann & Moran         Expires 4 September 2025               [Page 14]
+Bormann & Moran           Expires 3 March 2026                 [Page 14]
