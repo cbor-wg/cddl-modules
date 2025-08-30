@@ -38,14 +38,14 @@ author:
 
 normative:
   RFC8610: cddl
-  RFC9165: control1
   STD68: abnf # RFC5234
   RFC7405: abnf-case
 
 informative:
 #  I-D.draft-bormann-cbor-cddl-freezer: freezer
   RFC9682: grammar
-  I-D.ietf-cbor-cddl-more-control: control2
+  RFC9165: control1
+  RFC9741: control2
   I-D.bormann-cbor-cddl-2-draft: cddl-2-draft
   I-D.bormann-t2trg-deref-id: deref
   useful:
@@ -63,8 +63,8 @@ informative:
 [^abs1-]:
     At the time of writing,
     the Concise Data Definition Language (CDDL) is defined by
-    RFC 8610 and RFC 9682 as well as RFC 9165.
-    The latter has used the extension point provided in RFC 8610,
+    RFC 8610 and RFC 9682 as well as RFC 9165 and RFC 9741.
+    The latter two have used the extension point provided in RFC 8610,
     the _control operator_.
 
     As CDDL is being used in larger projects, the need for
